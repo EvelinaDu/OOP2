@@ -8,6 +8,7 @@ void Duom_ivedimas(Studentas &s){
     cout << "Įveskite visus namų darbų įvertinimus. Norėdami baigti įvedimą spauskite dukart 'Enter' klavišą" << endl;
     string eil;             // Kintamasis įvesties eilutei saugoti
     int ivertinimas;
+    vector<double> namuDarbai;
 
     // While ciklas, skirtas įrašyti studento namų darbų įvertinimus. Vyksta tol kol vartotojas nuspaudžia du kart "Enter".
     while(true){
@@ -26,7 +27,8 @@ void Duom_ivedimas(Studentas &s){
             if(ivertinimas < 1 || ivertinimas > 10){
                 throw out_of_range("Netinkama įvestis, įvertinimas turi būti nuo 1 iki 10. ");
             }
-            s.nd.push_back(ivertinimas);
+            // s.nd.push_back(ivertinimas);
+            namuDarbai.push_back(ivertinimas);
 
         } catch (const invalid_argument &e){
             cout << "Klaida: " << e.what() << "Bandykite dar kartą." << endl;
@@ -34,6 +36,8 @@ void Duom_ivedimas(Studentas &s){
             cout << "Klaida: " << e.what() << "Bandykite dar kartą." << endl;
         }
     }
+
+    s.setNd(namuDarbai);
 
     // Egzamino įvertinimo įvedimas.
     cout << "Įveskite studento egzamino įvertinimą: ";
@@ -43,13 +47,14 @@ void Duom_ivedimas(Studentas &s){
         // Išimčių tvarkymas skirtas egzamino įvedimui.
         try{
             stringstream ss(eil);
-            if(!(ss >> s.egz)){
+            if(!(ss >> ivertinimas)){
                 throw invalid_argument("Netinkama įvestis, įvestis nėra skaičius. ");
             }
 
-            if(s.egz < 1 || s.egz > 10){
+            if(ivertinimas < 1 || ivertinimas > 10){
                 throw out_of_range("Netinkama įvestis, įvertinimas turi būti nuo 1 iki 10. ");
             }
+            s.setEgz(ivertinimas);
             break;   // Išeiname iš while ciklo, jei įvestis teisinga.
 
         } catch (const invalid_argument &e){
@@ -71,17 +76,22 @@ uniform_int_distribution<int> Ivertinimas(min_rezult, max_result);
 
 // Funkcija, kuri generuoja studento namų darbų ir egzamino įvertinimus.
 void Duom_generavimas(Studentas &s, ostream &out ,int nd_kiekis){
+    vector<double> namuDarbai;
 
     for(int i = 0; i < nd_kiekis; i++){
-
         int nd_ivertinimas = Ivertinimas(rd_genrator);
         out << setw(5) << left << nd_ivertinimas;
-        s.nd.push_back(nd_ivertinimas);
-
+        // s.nd.push_back(nd_ivertinimas);
+        namuDarbai.push_back(nd_ivertinimas);
     }
 
-    s.egz = Ivertinimas(rd_genrator);
-    out << s.egz << endl;
+    s.setNd(namuDarbai);
+
+    double egzoIvertinimas = Ivertinimas(rd_genrator);
+    // s.egz = Ivertinimas(rd_genrator);
+    s.setEgz(egzoIvertinimas);
+    // out << s.egz << endl;
+    out << egzoIvertinimas << endl;
 }
 
 // Funkcija, kurioje klausiama kiek studentų vartotojas norėtų įtraukti, klausiama studentų vardų bei pavardžių, 
@@ -110,11 +120,17 @@ void Info_ivedimas_ranka(Container &stud, Studentas &s, int n){
     }
 
     for(int i = 0; i < n; i++){
+        string vardas, pavarde;
+
         cout << "Įveskite studento vardą: ";
-        cin >> s.vardas;
+        // cin >> s.vardas;
+        cin >> vardas;
+        s.setVardas(vardas);
 
         cout << "Įveskite studento pavarde: ";
-        cin >> s.pavarde;
+        // cin >> s.pavarde;
+        cin >> pavarde;
+        s.setPavarde(pavarde);
 
         cout << "Ar norite, kad mokinio gautieji balai už namų darbus bei egzaminą būtų generuojami atsitiktinai?(Taip/Ne) ";
         while(true){
