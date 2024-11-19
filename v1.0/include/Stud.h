@@ -48,6 +48,8 @@ class Studentas{
   inline double getGalutinis_vid() const { return galutinis_vid_; }
   inline double getGalutinis_med() const { return galutinis_med_; }
   
+  void Ivertinimas_vid();
+  void Ivertinimas_med();
 };
 
 // Funkcija, skirta studento duomenų įvedimui rankiniu būdu.
@@ -68,11 +70,11 @@ void Duom_is_failo(Container &stud, Studentas &s);
 // Funkcija skirta failo generavimui pagal įrašų kiekį.
 void Stud_failu_generavimas(int kiekis);
 
-// Funkcija skirta galutiniam įvertinimui pagal vidurkį apskaičiuoti.
-void Ivertinimas_vid(Studentas &s);
+// // Funkcija skirta galutiniam įvertinimui pagal vidurkį apskaičiuoti.
+// void Ivertinimas_vid(Studentas &s);
 
-// Funkcija skirta galutiniam įvertinimui pagal medianą apskaičiuoti.
-void Ivertinimas_med(Studentas &s);
+// // Funkcija skirta galutiniam įvertinimui pagal medianą apskaičiuoti.
+// void Ivertinimas_med(Studentas &s);
 
 // Funkcija, kuri skirta atspausdinti studento duomenis pagal vartotojo įvertinimo pasirinkimą (pagal vidurkį, medianą).
 void Stud_spausdinimas(Studentas &s, ostream &out, string p, string isvedimo_pasirinkimas);

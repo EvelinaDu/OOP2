@@ -292,50 +292,61 @@ void Stud_failu_generavimas(int kiekis){
 
 
 // Funkcija skirta galutiniam įvertinimui pagal vidurkį apskaičiuoti.
-void Ivertinimas_vid(Studentas &s){
+void Studentas :: Ivertinimas_vid(){
     double suma = 0;
-    int nd_kiekis = s.nd.size();   // Gauname namų darbų kiekį.
+    // int nd_kiekis = s.nd.size();   // Gauname namų darbų kiekį.
+    int nd_kiekis = nd_.size();
 
     // Pridedame kiekievieną namų darbų įvertinimą prie bendros sumos.
     for (int j = 0; j < nd_kiekis; j++){
-         suma += s.nd[j];
+        //  suma += s.nd[j];
+         suma += nd_[j];
     }
 
+    double ivertinimas;
     // Jei yra bent vienas namų darbas, skaičiuojame galutinį įvertinimą pagal vidurkį.
     if (nd_kiekis > 0 ){
-        s.galutinis_vid = 0.4 * suma/nd_kiekis + 0.6 * s.egz;
+        // s.galutinis_vid = 0.4 * suma/nd_kiekis + 0.6 * s.egz;
+        galutinis_vid_ = 0.4 * suma/nd_kiekis + 0.6 * egz_;
     } else {
-        s.galutinis_vid = 0.6 * s.egz;
+        // s.galutinis_vid = 0.6 * s.egz;
+        galutinis_vid_ =  0.6 * egz_;
     }
 
 
 }
 
 // Funkcija skirta galutiniam įvertinimui pagal medianą apskaičiuoti.
-void Ivertinimas_med(Studentas &s){
-    int nd_kiekis = s.nd.size();
+void Studentas :: Ivertinimas_med(){
+    // int nd_kiekis = s.nd.size();
+    int nd_kiekis = nd_.size();
 
     // Jei namų darbų nėra, tai galutinį įvertinimą nustatome pagal egzaminą.
     if (nd_kiekis == 0){
-        s.galutinis_med = 0.6 * s.egz;
+        galutinis_med_ = 0.6 * egz_;
+        // s.galutinis_med = 0.6 * s.egz;
         return;
     }
     
     // Surušiuoname namų darbus
-    sort(begin(s.nd), end(s.nd));
+    // sort(begin(s.nd), end(s.nd));
+    sort(begin(nd_), end(nd_));
 
 
 // Medianos ieškojimas
     double mediana = 0;
     int nr = nd_kiekis / 2;
     if (nd_kiekis % 2 == 0){
-        mediana = (s.nd[nr - 1] + s.nd[nr]) / 2.0;
+        // mediana = (s.nd[nr - 1] + s.nd[nr]) / 2.0;
+        mediana = (nd_[nr - 1] + nd_[nr]) / 2.0;
     } else {
-        mediana = s.nd[nr];
+        // mediana = s.nd[nr];
+        mediana = nd_[nr];
     }
 
 // Ivertinimo apskaičiavimas naudojant medianą.
-    s.galutinis_med = 0.4 * mediana + 0.6 * s.egz;
+    // s.galutinis_med = 0.4 * mediana + 0.6 * s.egz;
+    galutinis_med_ = 0.4 * mediana + 0.6 * egz_;
     
 }
 
