@@ -563,26 +563,26 @@ template void SpausdinimasRez<list<Studentas>>(list<Studentas>&, int, string, st
 
 
 // Funkcija, skirta išvalyti studento duomenis.
-void valymas(Studentas &s){
-    s.vardas.clear();
-    s.pavarde.clear();
-    s.nd.clear();
-    s.egz = 0; 
-}
+// void valymas(Studentas &s){
+//     s.vardas.clear();
+//     s.pavarde.clear();
+//     s.nd.clear();
+//     s.egz = 0; 
+// }
 
 // Funkcija, skirta sukurti du naujus kontainerius vargšiukams ir kietiakams, taip studentai yra surūšiuojami į dvi grupes.
 template <typename Container>
 void Kategorijos_Priskirimas1(Container &stud, Container &stud_Vargsiukai, Container &stud_Kietiakai, string pasirinkimas){
     for (const auto& studentas : stud){
         if (pasirinkimas == "V" || pasirinkimas == "v"){
-            if (studentas.galutinis_vid < 5.0){
+            if (studentas.getGalutinis_vid() < 5.0){
                 stud_Vargsiukai.push_back(studentas);
             } else {
                 stud_Kietiakai.push_back(studentas);
             }
         } 
         else if(pasirinkimas == "M" || pasirinkimas == "m"){
-            if (studentas.galutinis_med < 5.0){
+            if (studentas.getGalutinis_med() < 5.0){
                 stud_Vargsiukai.push_back(studentas);
             } else {
                 stud_Kietiakai.push_back(studentas);
@@ -599,22 +599,22 @@ void Kategorijos_Priskirimas2(Container &stud, Container &stud_Vargsiukai, strin
     if constexpr (is_same_v<Container, vector<Studentas>>){
         if (pasirinkimas == "V" || pasirinkimas == "v"){
             sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
-            return s1.galutinis_vid > s2.galutinis_vid;
+            return s1.getGalutinis_vid() > s2.getGalutinis_vid();
             });
         } else if(pasirinkimas == "M" || pasirinkimas == "m"){
             sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
-            return s1.galutinis_med > s2.galutinis_med;
+            return s1.getGalutinis_med() > s2.getGalutinis_med();
             });
         }
     }      
     else if (is_same_v<Container, list<Studentas>>){
         if (pasirinkimas == "V" || pasirinkimas == "v"){
                 stud.sort([](const Studentas &s1, const Studentas &s2) {
-                    return s1.galutinis_vid > s2.galutinis_vid;
+                    return s1.getGalutinis_vid() > s2.getGalutinis_vid();
                 });
         } else if(pasirinkimas == "M" || pasirinkimas == "m"){
             stud.sort([](const Studentas &s1, const Studentas &s2){
-                return s1.galutinis_med > s2.galutinis_med;
+                return s1.getGalutinis_med() > s2.getGalutinis_med();
             });
         }
         
@@ -644,17 +644,17 @@ void Kategorijos_Priskirimas3(Container &stud, Container &stud_Vargsiukai, Conta
 
     std::stable_partition(stud.begin(), stud.end(), [&](const auto &studentas){
         if (pasirinkimas == "V" || pasirinkimas == "v"){
-            return studentas.galutinis_vid >= 5.0;
+            return studentas.getGalutinis_vid() >= 5.0;
         }
-        return studentas.galutinis_med >= 5.0;
+        return studentas.getGalutinis_med() >= 5.0;
     });
 
     while(!stud.empty()){
-        if((pasirinkimas == "V" || pasirinkimas == "v") && stud.back().galutinis_vid < 5.0){
+        if((pasirinkimas == "V" || pasirinkimas == "v") && stud.back().getGalutinis_vid() < 5.0){
             stud_Vargsiukai.push_back(stud.back());
             stud.pop_back();
         }
-        else if((pasirinkimas == "M" || pasirinkimas == "m") && stud.back().galutinis_med < 5.0){
+        else if((pasirinkimas == "M" || pasirinkimas == "m") && stud.back().getGalutinis_med() < 5.0){
             stud_Vargsiukai.push_back(stud.back());
             stud.pop_back();
         }
