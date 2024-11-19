@@ -352,19 +352,27 @@ void Studentas :: Ivertinimas_med(){
 
 // Funkcija, kuri skirta atspausdinti studento duomenis pagal vartotojo įvertinimo pasirinkimą (pagal vidurkį, medianą).
 void Stud_spausdinimas(Studentas &s, ostream &out, string p, string isvedimo_pasirinkimas){
+    string vardas, pavarde;
+    vardas = s.getVardas();
+    pavarde = s.getPavarde();
+    double galutinis;
     if(isvedimo_pasirinkimas  == "T" || isvedimo_pasirinkimas == "t"){
         if(p == "V" || p == "v"){
-            out << setw(15) << left << s.vardas << setw(16) << left << s.pavarde << setw(20) << left << fixed << setprecision(2) << s.galutinis_vid  << setw(20) << left << &s << endl;
+            galutinis = s.getGalutinis_vid();
+            out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(20) << left << fixed << setprecision(2) << galutinis  << setw(20) << left << &s << endl;
         }
         else if(p == "M" || p == "m"){
-            out << setw(15) << left << s.vardas << setw(16) << left << s.pavarde << setw(20) << left << fixed << setprecision(2) << s.galutinis_med  << setw(20) << left << &s << endl;
+            galutinis = s.getGalutinis_med();
+            out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(20) << left << fixed << setprecision(2) << galutinis  << setw(20) << left << &s << endl;
         }
     } else{
         if(p == "V" || p == "v"){
-            out << setw(15) << left << s.vardas << setw(16) << left << s.pavarde << setw(16) << left << fixed << setprecision(2) << s.galutinis_vid << endl;
+            galutinis = s.getGalutinis_vid();
+            out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(16) << left << fixed << setprecision(2) << galutinis << endl;
         }
         else if(p == "M" || p == "m"){
-            out << setw(15) << left << s.vardas << setw(16) << left << s.pavarde << setw(16) << left << fixed << setprecision(2) << s.galutinis_med << endl;
+            galutinis = s.getGalutinis_med();
+            out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(16) << left << fixed << setprecision(2) << galutinis << endl;
         }
     }
     
@@ -491,11 +499,16 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
     ofstream failasOut;
 
     // Kiekvienam studentui apskaičiuojamas įvertinimas pagal vidurkį ir medianą
-    auto i = stud.begin();          // i - iteratorius, nurodantis į pirmąjį studentą
-    while(i != stud.end()){
-        Ivertinimas_vid(*i);        // *i - studentas, į kuri rodo iteratorius
-        Ivertinimas_med(*i);
-        ++i;
+    // auto i = stud.begin();          // i - iteratorius, nurodantis į pirmąjį studentą
+    // while(i != stud.end()){
+    //     Ivertinimas_vid(*i);        // *i - studentas, į kuri rodo iteratorius
+    //     Ivertinimas_med(*i);
+    //     ++i;
+    // }
+
+    for(auto& studentas : stud){
+        studentas.Ivertinimas_vid();
+        studentas.Ivertinimas_med();
     }
 
     //Rusiavimas
