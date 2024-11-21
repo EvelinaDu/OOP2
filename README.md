@@ -138,6 +138,12 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
     - Naudoti 3 strategiją laiko atžvilgiu yra efektyviausia.
 
 
+### Struct ir Class testavimo laikai.
+Testavimas atliktas naudojant vieną fiksuotą konteinerį (sąrašą (list)), studentų skaidymui buvo naudojama 2 strategija.
+Testavimas atliktas su 100000 ir 1000000 dydžio failais.
+
+![alt text](.png)
+
 ## Testavimo sistemos parametrai:
 
 - CPU - AMD Ryzen 7 7730U with Radeon Graphics  2.00 GHz

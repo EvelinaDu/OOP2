@@ -71,8 +71,6 @@ int main() {
 
         if(ivedimo_skaitymo_p == "N" || ivedimo_skaitymo_p == "n"){
             Duom_is_failo(stud);
-            
-
         }
         else if(ivedimo_skaitymo_p == "I" || ivedimo_skaitymo_p == "i"){
             Info_ivedimas_ranka(stud, n);

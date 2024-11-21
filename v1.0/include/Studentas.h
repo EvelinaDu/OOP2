@@ -14,7 +14,7 @@ using std::string;
 using std::vector;
 
 class Studentas{
-  private: // duomenys
+  private:
   string vardas_;
   string pavarde_;
   vector <double> nd_;
