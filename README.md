@@ -144,6 +144,24 @@ Testavimas atliktas su 100000 ir 1000000 dydžio failais.
 
 ![alt text](struct_class_list.png)
 
+### Kompiliatoriaus optimizavimas
+Kompiliatoriaus optimizavimo lygiai, nurodomi per flag'us: O1, O2, O3.
+
+**O1:**
+
+![alt text](O1.png)
+
+
+**O2:**
+
+![alt text](O2.png)
+
+
+**O3:**
+
+![alt text](O3.png)
+
+
 ## Testavimo sistemos parametrai:
 
 - CPU - AMD Ryzen 7 7730U with Radeon Graphics  2.00 GHz
