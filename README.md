@@ -116,7 +116,7 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
 - **Įrašymas į failus:** Tiek sąrašas, tiek vektorius užtrunka panašiai laiko įrašydamas duomenis į "Vargšiukus" ir "Kietiakus" failus. Tačiau vektorius greičiau įrašynėja su didesniu kiekiu įrašų (10 mln.).
 
 
-### Strategijų testavimo laikai dirbant su vektoriu ir sąrašu.
+### Strategijų testavimo laikai dirbant su vektoriu ir sąrašu
 
 ![alt text](Strategiju_testavimo_laikai.png)
 
@@ -138,13 +138,20 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
     - Naudoti 3 strategiją laiko atžvilgiu yra efektyviausia.
 
 
-### Struct ir Class testavimo laikai.
+### Struct ir Class testavimo laikai
 Testavimas atliktas naudojant vieną fiksuotą konteinerį (sąrašą (list)), studentų skaidymui buvo naudojama 2 strategija.
 Testavimas atliktas su 100000 ir 1000000 dydžio failais.
 
 ![alt text](struct_class_list.png)
 
-### Kompiliatoriaus optimizavimas
+
+### Trumpa analizė:
+
+- **Duomenų skaitymas:** Programa naudojant *Struct* greičiau nuskaito duomenis, tiek iš failą su 100000 įrašų, tiek failą su 1000000 įrašų.
+- **Rūšiavimas į grupes:** Tiek naudojant programą su *Struct*, tiek su *Class* gaunamas panašus laikas skaidant studentus.
+- **Įrašymas į failus:** Abi programos įrašo panašiu greičiu, tačiau naudojant *Struct* įrašymas vyksta truputi greičiau.
+
+### Kompiliatoriaus optimizavimas (Skliausteliuose pateikiamas .exe failo dydis)
 Kompiliatoriaus optimizavimo lygiai, nurodomi per flag'us: O1, O2, O3.
 
 **O1:**
@@ -160,6 +167,14 @@ Kompiliatoriaus optimizavimo lygiai, nurodomi per flag'us: O1, O2, O3.
 **O3:**
 
 ![alt text](O3.png)
+
+### Trumpa analizė:
+
+- **Duomenų skaitymas:** Skaitymas buvo greičiausas naudojant O2 optimizavimo lygį (List, Struct, O2 (291 KB)).
+- **Rūšiavimas į grupes:** Rūšiavimo rezultatai labai panašūs tarp optimizavimo lygių.
+- **Įrašymas į failus:** Duomenų įrašymo rezultatai, taip pat panašūs tarp optimizavimo lygių, tačiau greičiausia naudojant O1 optimizavimo lygį (List, Struct, O1 (355 KB)).
+- **Dydžiausias .exe failo dydis:** O1 359 KB (List, Class)
+- **Mažiausias .exe failo dydis:** O3 290 KB (List, Struct)
 
 
 ## Testavimo sistemos parametrai:
