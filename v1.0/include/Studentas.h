@@ -23,20 +23,10 @@ class Studentas{
   double galutinis_med_;
 
   public:
-  // Konstrukteriai
-//   Studentas() : egz_(0), galutinis_vid_(0), galutinis_med_(0) { }
-
-//   Studentas(const string& vardas, const string& pavarde, const vector <double>& nd, double egz) : 
-//   vardas_(vardas), pavarde_(pavarde), nd_(nd), egz_(egz), galutinis_vid_(0), galutinis_med_(0) {}
-
+  // Konstruktoriai
   Studentas(const string& vardas, const string& pavarde, const vector <double>& nd, double egz);
   Studentas(const string& vardas, const string& pavarde, int kiekis);
   ~Studentas();
-
-
-  // Studentas(std::istream& is){
-  //   readStudent(is);
-  // }
 
   // set'eriai
 //   void setVardas(const string& vardas) {vardas_ = vardas; }
@@ -57,9 +47,7 @@ class Studentas{
   void Ivertinimas_vid();
   void Ivertinimas_med();
   
-  
 
-  
 };
 
 #endif

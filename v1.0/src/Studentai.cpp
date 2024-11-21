@@ -23,7 +23,6 @@ int main() {
     if (vektorius_arba_sarasas == "V" || vektorius_arba_sarasas == "v"){
         vector<Studentas> stud;
         vector<Studentas> stud_Vargsiukai, stud_Kietiakai;
-        // Studentas s;
         vector<int> kiekis; 
 
         if(ivedimo_skaitymo_p == "N" || ivedimo_skaitymo_p == "n"){
@@ -68,7 +67,6 @@ int main() {
     else{
         list<Studentas> stud;
         list<Studentas> stud_Vargsiukai, stud_Kietiakai;
-        // Studentas s;
         list<int> kiekis;
 
         if(ivedimo_skaitymo_p == "N" || ivedimo_skaitymo_p == "n"){
