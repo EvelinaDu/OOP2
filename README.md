@@ -142,7 +142,7 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
 Testavimas atliktas naudojant vieną fiksuotą konteinerį (sąrašą (list)), studentų skaidymui buvo naudojama 2 strategija.
 Testavimas atliktas su 100000 ir 1000000 dydžio failais.
 
-![alt text](.png)
+![alt text](struct_class_list.png)
 
 ## Testavimo sistemos parametrai:
 
