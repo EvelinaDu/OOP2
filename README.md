@@ -118,27 +118,31 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
 
 ### Strategijų testavimo laikai dirbant su vektoriu ir sąrašu
 
-![alt text](Strategiju_testavimo_laikai.png)
+![alt text](Strategija1.png)
+
+![alt text](Strategija2.png)
+
+![alt text](Strategija3.png)
 
 
 ### Trumpa analizė: (Duomenų skaidymo į dvi grupes, efektyvumas laiko atžvilgiu)
 
 - **1 Strategija:** 
-    - Sąrašąs efektyviau su mažesnių kiekiu duomenų (iki 10mln).
+    - Sąrašas efektyviau su mažesnių kiekiu duomenų (iki 10mln).
     - Vektorius efektyviau su 10 mln. kiekiu duomenų.
 
 - **2 Strategija:** 
-    - Sąrašas visais atvejais efektyviau.
+    - Sąrašas efektyviau naudojant su 1000, 10000, 1000000 įrašų.
+    - Vektorius efektyviau naudojant su 100000, 10000000 įrašų.
 
 - **3 Strategija:** 
-    - Sąrašąs efektyviau su mažesnių kiekiu duomenų (iki 10mln).
-    - Vektorius efektyviau su 10 mln. kiekiu duomenų.
+    - Visais atvejais vektorius efektyviausias.
 
 - **Rekomendacija:**
     - Naudoti 3 strategiją laiko atžvilgiu yra efektyviausia.
 
 
-### Struct ir Class testavimo laikai
+### Struct ir Class testavimo laikai:
 Testavimas atliktas naudojant vieną fiksuotą konteinerį (sąrašą (list)), studentų skaidymui buvo naudojama 2 strategija.
 Testavimas atliktas su 100000 ir 1000000 dydžio failais.
 
@@ -150,6 +154,7 @@ Testavimas atliktas su 100000 ir 1000000 dydžio failais.
 - **Duomenų skaitymas:** Programa naudojant *Struct* greičiau nuskaito duomenis, tiek iš failą su 100000 įrašų, tiek failą su 1000000 įrašų.
 - **Rūšiavimas į grupes:** Tiek naudojant programą su *Struct*, tiek su *Class* gaunamas panašus laikas skaidant studentus.
 - **Įrašymas į failus:** Abi programos įrašo panašiu greičiu, tačiau naudojant *Struct* įrašymas vyksta truputi greičiau.
+
 
 ### Kompiliatoriaus optimizavimas (Skliausteliuose pateikiamas .exe failo dydis)
 Kompiliatoriaus optimizavimo lygiai, nurodomi per flag'us: O1, O2, O3.

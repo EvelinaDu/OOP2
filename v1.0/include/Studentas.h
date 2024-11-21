@@ -29,12 +29,12 @@ class Studentas{
   ~Studentas();
 
   // set'eriai
-//   void setVardas(const string& vardas) {vardas_ = vardas; }
-//   void setPavarde(const string& pavarde) {pavarde_ = pavarde; }
-//   void setNd(const vector<double>& nd) {nd_ = nd; }
-//   void setEgz(const double& egz) {egz_ = egz; }
-//   void setGalutinis_vid(const double& ivertinimas){galutinis_vid_ = ivertinimas; }
-//   void setGalutinis_med(const double& ivertinimas){galutinis_med_ = ivertinimas; }
+  void setVardas(const string& vardas) {vardas_ = vardas; }
+  void setPavarde(const string& pavarde) {pavarde_ = pavarde; }
+  void setNd(const vector<double>& nd) {nd_ = nd; }
+  void setEgz(const double& egz) {egz_ = egz; }
+  void setGalutinis_vid(const double& ivertinimas){galutinis_vid_ = ivertinimas; }
+  void setGalutinis_med(const double& ivertinimas){galutinis_med_ = ivertinimas; }
 
   // get'eriai
   inline string getVardas() const { return vardas_; }
