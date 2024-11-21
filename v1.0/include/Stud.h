@@ -2,6 +2,7 @@
 #define STUD_H_INCLUDED
 
 #include "Mylib.h"
+#include "Studentas.h"
 
 // Studento struktūra, kuri susideda iš vardo, pavardes, namų darbų vektoriaus, egzamino ir įvertinimų.
 // struct Studentas{
@@ -12,48 +13,58 @@
 // };
 
 
-class Studentas{
-  private: // duomenys
-  string vardas_;
-  string pavarde_;
-  vector <double> nd_;
-  double egz_;
-  double galutinis_vid_;
-  double galutinis_med_;
+// class Studentas{
+//   private: // duomenys
+//   string vardas_;
+//   string pavarde_;
+//   vector <double> nd_;
+//   double egz_;
+//   double galutinis_vid_;
+//   double galutinis_med_;
 
-  public:
-  // Konstrukteriai
-  Studentas() : egz_(0), galutinis_vid_(0), galutinis_med_(0) { }
+//   public:
+//   // Konstrukteriai
+//   Studentas() : egz_(0), galutinis_vid_(0), galutinis_med_(0) { }
 
-  Studentas(const string& vardas, const string& pavarde, const vector <double>& nd, double egz) : 
-  vardas_(vardas), pavarde_(pavarde), nd_(nd), egz_(egz), galutinis_vid_(0), galutinis_med_(0) { }
+//   Studentas(const string& vardas, const string& pavarde, const vector <double>& nd, double egz) : 
+//   vardas_(vardas), pavarde_(pavarde), nd_(nd), egz_(egz), galutinis_vid_(0), galutinis_med_(0) { }
 
-  // Studentas(std::istream& is){
-  //   readStudent(is);
-  // }
+//   // Studentas(std::istream& is){
+//   //   readStudent(is);
+//   // }
 
-  // set'eriai
-  void setVardas(const string& vardas) {vardas_ = vardas; }
-  void setPavarde(const string& pavarde) {pavarde_ = pavarde; }
-  void setNd(const vector<double>& nd) {nd_ = nd; }
-  void setEgz(const double& egz) {egz_ = egz; }
-  void setGalutinis_vid(const double& ivertinimas){galutinis_vid_ = ivertinimas; }
-  void setGalutinis_med(const double& ivertinimas){galutinis_med_ = ivertinimas; }
+//   // set'eriai
+//   void setVardas(const string& vardas) {vardas_ = vardas; }
+//   void setPavarde(const string& pavarde) {pavarde_ = pavarde; }
+//   void setNd(const vector<double>& nd) {nd_ = nd; }
+//   void setEgz(const double& egz) {egz_ = egz; }
+//   void setGalutinis_vid(const double& ivertinimas){galutinis_vid_ = ivertinimas; }
+//   void setGalutinis_med(const double& ivertinimas){galutinis_med_ = ivertinimas; }
 
-  // get'eriai
-  inline string getVardas() const { return vardas_; }
-  inline string getPavarde() const { return pavarde_; }
-  inline double getEgz() const {return egz_; }
-  inline vector<double> getNd() const { return nd_; }
-  inline double getGalutinis_vid() const { return galutinis_vid_; }
-  inline double getGalutinis_med() const { return galutinis_med_; }
+//   // get'eriai
+//   inline string getVardas() const { return vardas_; }
+//   inline string getPavarde() const { return pavarde_; }
+//   inline double getEgz() const {return egz_; }
+//   inline vector<double> getNd() const { return nd_; }
+//   inline double getGalutinis_vid() const { return galutinis_vid_; }
+//   inline double getGalutinis_med() const { return galutinis_med_; }
   
-  void Ivertinimas_vid();
-  void Ivertinimas_med();
-};
+//   void Ivertinimas_vid();
+//   void Ivertinimas_med();
+
+//   ~Studentas(){
+//     vardas_.clear();
+//     pavarde_.clear();
+//     nd_.clear();
+//     egz_=0;
+//     galutinis_vid_ = 0;
+//     galutinis_med_ - 0;
+//   };
+// };
 
 // Funkcija, skirta studento duomenų įvedimui rankiniu būdu.
-void Duom_ivedimas(Studentas &s);
+template <typename Container>
+void Duom_ivedimas(Container &stud, string vardas, string pavarde);
 
 // Funkcija, kuri generuoja studento namų darbų ir egzamino įvertinimus.
 void Duom_generavimas(Studentas &s, ostream &out, int nd_kiekis);
@@ -61,11 +72,12 @@ void Duom_generavimas(Studentas &s, ostream &out, int nd_kiekis);
 // Funkcija, kurioje klausiama kiek studentų vartotojas norėtų įtraukti, klausiama studentų vardų bei pavardžių, 
 // klausiama koks įvertinimų įvedimas(rankinis ar generavimas) ir pagal tai įvykdoma. 
 template <typename Container>
-void Info_ivedimas_ranka(Container &stud, Studentas &s, int n);
+void Info_ivedimas_ranka(Container &stud, int n);
 
 // Funkcija skirta nuskaityti studento įvertinimus iš failo.
 template <typename Container>
-void Duom_is_failo(Container &stud, Studentas &s);
+// void Duom_is_failo(Container &stud, Studentas &s);
+void Duom_is_failo(Container &stud);
 
 // Funkcija skirta failo generavimui pagal įrašų kiekį.
 void Stud_failu_generavimas(int kiekis);
@@ -91,7 +103,7 @@ template <typename Container>
 void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, string rez_pasirinkimas, string rusiavimo_p, string ivedimo_skaitymo_p);
 
 // Funkcija, skirta išvalyti studento duomenis.
-void valymas(Studentas &s);
+// void valymas(Studentas &s);
 
 // Funkcija, skirta sukurti du naujus kontainerius vargšiukams ir kietiakams, taip studentai yra surūšiuojami į dvi grupes.
 template <typename Container>

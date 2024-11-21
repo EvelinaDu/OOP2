@@ -1,9 +1,11 @@
 
+#include "../include/Studentas.h"
 #include "../include/Stud.h"
 #include "../include/timer.h"
 
 // Funkcija, skirta studento duomenų įvedimui rankiniu būdu.
-void Duom_ivedimas(Studentas &s){
+template <typename Container>
+void Duom_ivedimas(Container &stud, string vardas, string pavarde){
 
     cout << "Įveskite visus namų darbų įvertinimus. Norėdami baigti įvedimą spauskite dukart 'Enter' klavišą" << endl;
     string eil;             // Kintamasis įvesties eilutei saugoti
@@ -37,7 +39,7 @@ void Duom_ivedimas(Studentas &s){
         }
     }
 
-    s.setNd(namuDarbai);
+    // s.setNd(namuDarbai);
 
     // Egzamino įvertinimo įvedimas.
     cout << "Įveskite studento egzamino įvertinimą: ";
@@ -54,7 +56,8 @@ void Duom_ivedimas(Studentas &s){
             if(ivertinimas < 1 || ivertinimas > 10){
                 throw out_of_range("Netinkama įvestis, įvertinimas turi būti nuo 1 iki 10. ");
             }
-            s.setEgz(ivertinimas);
+            // s.setEgz(ivertinimas);
+            stud.push_back(Studentas(vardas, pavarde, namuDarbai, ivertinimas));
             break;   // Išeiname iš while ciklo, jei įvestis teisinga.
 
         } catch (const invalid_argument &e){
@@ -65,41 +68,46 @@ void Duom_ivedimas(Studentas &s){
     }
 
 }
+template void Duom_ivedimas<vector<Studentas>>(vector<Studentas>&, string, string);
+template void Duom_ivedimas<list<Studentas>>(list<Studentas>&, string, string);
 
-int min_rezult = 1;
-int max_result = 10;
+// const int min_rezult = 1;
+// const int max_result = 10;
 
-//Atsitiktiniu skaičiu generatorius
-random_device rd_genrator;   
-// Intervalas atsitiktinei reikšmei
-uniform_int_distribution<int> Ivertinimas(min_rezult, max_result);
+// //Atsitiktiniu skaičiu generatorius
+// random_device rd_genrator;   
+// // Intervalas atsitiktinei reikšmei
+// uniform_int_distribution<int> Ivertinimas(min_rezult, max_result);
 
-// Funkcija, kuri generuoja studento namų darbų ir egzamino įvertinimus.
-void Duom_generavimas(Studentas &s, ostream &out ,int nd_kiekis){
-    vector<double> namuDarbai;
+// // Funkcija, kuri generuoja studento namų darbų ir egzamino įvertinimus.
+// void Duom_generavimas(Studentas &s, ostream &out, int nd_kiekis){
+//     vector<double> namuDarbai;
 
-    for(int i = 0; i < nd_kiekis; i++){
-        int nd_ivertinimas = Ivertinimas(rd_genrator);
-        out << setw(5) << left << nd_ivertinimas;
-        // s.nd.push_back(nd_ivertinimas);
-        namuDarbai.push_back(nd_ivertinimas);
-    }
+//     for(int i = 0; i < nd_kiekis; i++){
+//         int nd_ivertinimas = Ivertinimas(rd_genrator);
+//         out << setw(5) << left << nd_ivertinimas;
+//         // s.nd.push_back(nd_ivertinimas);
+//         namuDarbai.push_back(nd_ivertinimas);
+//     }
 
-    s.setNd(namuDarbai);
+//     s.setNd(namuDarbai);
 
-    double egzoIvertinimas = Ivertinimas(rd_genrator);
-    // s.egz = Ivertinimas(rd_genrator);
-    s.setEgz(egzoIvertinimas);
-    // out << s.egz << endl;
-    out << egzoIvertinimas << endl;
-}
+//     double egzoIvertinimas = Ivertinimas(rd_genrator);
+//     // s.egz = Ivertinimas(rd_genrator);
+//     s.setEgz(egzoIvertinimas);
+//     // out << s.egz << endl;
+//     out << egzoIvertinimas << endl;
+// }
+
+
 
 // Funkcija, kurioje klausiama kiek studentų vartotojas norėtų įtraukti, klausiama studentų vardų bei pavardžių, 
 // klausiama koks įvertinimų įvedimas(rankinis ar generavimas) ir pagal tai įvykdoma. 
 template <typename Container>
-void Info_ivedimas_ranka(Container &stud, Studentas &s, int n){
+void Info_ivedimas_ranka(Container &stud, int n){
     string eil;
     string random_pasirinkimas;
+    // Studentas s;
 
     cout << "Kiek studentų norite įtraukti į sistemą: ";
     cin.ignore();
@@ -125,12 +133,12 @@ void Info_ivedimas_ranka(Container &stud, Studentas &s, int n){
         cout << "Įveskite studento vardą: ";
         // cin >> s.vardas;
         cin >> vardas;
-        s.setVardas(vardas);
+        // s.setVardas(vardas);
 
         cout << "Įveskite studento pavarde: ";
         // cin >> s.pavarde;
         cin >> pavarde;
-        s.setPavarde(pavarde);
+        // s.setPavarde(pavarde);
 
         cout << "Ar norite, kad mokinio gautieji balai už namų darbus bei egzaminą būtų generuojami atsitiktinai?(Taip/Ne) ";
         while(true){
@@ -151,6 +159,7 @@ void Info_ivedimas_ranka(Container &stud, Studentas &s, int n){
         }
 
         if(random_pasirinkimas == "Taip" || random_pasirinkimas == "taip" || random_pasirinkimas == "TAIP"){
+            // Studentas s;
             int nd_kiekis;
             cout << "Kiek namų darbų norėtumėt, kad būtų sugeneruota? ";
             cin.ignore();
@@ -171,29 +180,31 @@ void Info_ivedimas_ranka(Container &stud, Studentas &s, int n){
                 } 
             }
             
-            Duom_generavimas(s, cout, nd_kiekis);
-            stud.push_back(s);
-            valymas(s);
+            // Duom_generavimas(s, cout, nd_kiekis);
+            // stud.push_back(s);
+            stud.push_back(Studentas(vardas, pavarde, nd_kiekis));
+            
+            // valymas(s);
         }
         else if(random_pasirinkimas == "Ne" || random_pasirinkimas == "ne" || random_pasirinkimas == "NE"){
 
             // cin.ignore() pašalina visus likusius simbolius iš įvesties srauto iki pirmo naujos eilutės simbolio.
             cin.ignore(); 
-            Duom_ivedimas(s);
-            stud.push_back(s);
-            valymas(s);
+            Duom_ivedimas(stud, vardas, pavarde);
+            // stud.push_back(s);
+            // valymas(s);
         }
 
     } 
 }
 
-template void Info_ivedimas_ranka<vector<Studentas>>(vector<Studentas>&, Studentas&, int);
-template void Info_ivedimas_ranka<list<Studentas>>(list<Studentas>&, Studentas&, int);
+template void Info_ivedimas_ranka<vector<Studentas>>(vector<Studentas>&, int);
+template void Info_ivedimas_ranka<list<Studentas>>(list<Studentas>&, int);
 
 
-// Funkcija skirta nuskaityti studento įvertinimus iš failo.
+
 template <typename Container>
-void Duom_is_failo(Container &stud, Studentas &s){
+void Duom_is_failo(Container &stud){
     ifstream failasIn;   //Skirtas failo nuskaitymui
     string f_pav;        //Failo pavadinimas
     string eil;
@@ -210,15 +221,18 @@ void Duom_is_failo(Container &stud, Studentas &s){
             if (!failasIn.is_open()) {
                 throw runtime_error("Klaida, failas nerastas! Bandykite dar kartą! ");
             }  
-            
+
             getline(failasIn, eil);
 
             while(getline(failasIn, eil)){
                 stringstream ss(eil);
-                ss >> s.vardas >> s.pavarde;
+                string vardas, pavarde;
+                ss >> vardas >> pavarde;
 
+                vector<double> namuDarbai;
                 int ivertinimas;
                 string netinkantis_ivertinimas;
+
                 while(true){
                     try{
                         if(!(ss >> ivertinimas)){
@@ -230,7 +244,8 @@ void Duom_is_failo(Container &stud, Studentas &s){
                         if (ivertinimas < 1 || ivertinimas > 10){
                             throw out_of_range("Netinkamas įvertinimas: " + std::to_string(ivertinimas));
                         }
-                        s.nd.push_back(ivertinimas);
+                        namuDarbai.push_back(ivertinimas);
+
                     } catch(const invalid_argument &e){
                         cout << "Klaida: " << e.what() << ". Šis įvertinimas bus praleistas." << endl;
                         continue;   //einame prie kito elemento
@@ -240,14 +255,19 @@ void Duom_is_failo(Container &stud, Studentas &s){
                     }               
                 }
 
-                if(!s.nd.empty()){
-                    s.egz = s.nd.back();
-                    s.nd.pop_back();
+                double egzaminas;
+
+                if(!namuDarbai.empty()){
+                    // temp.setEgz(namuDarbai.back());
+                    egzaminas = namuDarbai.back();
+                    namuDarbai.pop_back();
+
                 }
                 
-                stud.push_back(s);
-                valymas(s);
+                stud.emplace_back(Studentas(vardas, pavarde, namuDarbai, egzaminas));
+
             }
+            failasIn.close();
             cout << endl;
             cout << "Failas sėkmingai perskaitytas. Studentų kiekis: " << stud.size() << endl; 
             cout << "Duomenų skaitymas užtruko: " << t.elapsed() << " s\n";
@@ -258,15 +278,22 @@ void Duom_is_failo(Container &stud, Studentas &s){
         }
     }
 
-    failasIn.close();
+
 }
 
-template void Duom_is_failo<vector<Studentas>>(vector<Studentas>&, Studentas& s);
-template void Duom_is_failo<list<Studentas>>(list<Studentas>&, Studentas& s);
-
+template void Duom_is_failo<vector<Studentas>>(vector<Studentas>&);
+template void Duom_is_failo<list<Studentas>>(list<Studentas>&);
 
 // Funkcija skirta failo generavimui pagal įrašų kiekį.
 void Stud_failu_generavimas(int kiekis){
+const int min_rezult = 1;
+const int max_result = 10;
+
+//Atsitiktiniu skaičiu generatorius
+random_device rd_genrator;   
+// Intervalas atsitiktinei reikšmei
+uniform_int_distribution<int> Ivertinimas(min_rezult, max_result);
+
     string pav = "Studentai_" + to_string(kiekis) + ".txt";
 
     ofstream failas;
@@ -307,64 +334,64 @@ void Stud_failu_generavimas(int kiekis){
 }
 
 
-// Funkcija skirta galutiniam įvertinimui pagal vidurkį apskaičiuoti.
-void Studentas :: Ivertinimas_vid(){
-    double suma = 0;
-    // int nd_kiekis = s.nd.size();   // Gauname namų darbų kiekį.
-    int nd_kiekis = nd_.size();
+// // Funkcija skirta galutiniam įvertinimui pagal vidurkį apskaičiuoti.
+// void Studentas :: Ivertinimas_vid(){
+//     double suma = 0;
+//     // int nd_kiekis = s.nd.size();   // Gauname namų darbų kiekį.
+//     int nd_kiekis = nd_.size();
 
-    // Pridedame kiekievieną namų darbų įvertinimą prie bendros sumos.
-    for (int j = 0; j < nd_kiekis; j++){
-        //  suma += s.nd[j];
-         suma += nd_[j];
-    }
+//     // Pridedame kiekievieną namų darbų įvertinimą prie bendros sumos.
+//     for (int j = 0; j < nd_kiekis; j++){
+//         //  suma += s.nd[j];
+//          suma += nd_[j];
+//     }
 
-    double ivertinimas;
-    // Jei yra bent vienas namų darbas, skaičiuojame galutinį įvertinimą pagal vidurkį.
-    if (nd_kiekis > 0 ){
-        // s.galutinis_vid = 0.4 * suma/nd_kiekis + 0.6 * s.egz;
-        galutinis_vid_ = 0.4 * suma/nd_kiekis + 0.6 * egz_;
-    } else {
-        // s.galutinis_vid = 0.6 * s.egz;
-        galutinis_vid_ =  0.6 * egz_;
-    }
+//     double ivertinimas;
+//     // Jei yra bent vienas namų darbas, skaičiuojame galutinį įvertinimą pagal vidurkį.
+//     if (nd_kiekis > 0 ){
+//         // s.galutinis_vid = 0.4 * suma/nd_kiekis + 0.6 * s.egz;
+//         galutinis_vid_ = 0.4 * suma/nd_kiekis + 0.6 * egz_;
+//     } else {
+//         // s.galutinis_vid = 0.6 * s.egz;
+//         galutinis_vid_ =  0.6 * egz_;
+//     }
 
 
-}
+// }
 
-// Funkcija skirta galutiniam įvertinimui pagal medianą apskaičiuoti.
-void Studentas :: Ivertinimas_med(){
-    // int nd_kiekis = s.nd.size();
-    int nd_kiekis = nd_.size();
+// // Funkcija skirta galutiniam įvertinimui pagal medianą apskaičiuoti.
+// void Studentas :: Ivertinimas_med(){
+//     // int nd_kiekis = s.nd.size();
+//     int nd_kiekis = nd_.size();
 
-    // Jei namų darbų nėra, tai galutinį įvertinimą nustatome pagal egzaminą.
-    if (nd_kiekis == 0){
-        galutinis_med_ = 0.6 * egz_;
-        // s.galutinis_med = 0.6 * s.egz;
-        return;
-    }
+//     // Jei namų darbų nėra, tai galutinį įvertinimą nustatome pagal egzaminą.
+//     if (nd_kiekis == 0){
+//         galutinis_med_ = 0.6 * egz_;
+//         // s.galutinis_med = 0.6 * s.egz;
+//         return;
+//     }
     
-    // Surušiuoname namų darbus
-    // sort(begin(s.nd), end(s.nd));
-    sort(begin(nd_), end(nd_));
+//     // Surušiuoname namų darbus
+//     // sort(begin(s.nd), end(s.nd));
+//     sort(begin(nd_), end(nd_));
 
 
-// Medianos ieškojimas
-    double mediana = 0;
-    int nr = nd_kiekis / 2;
-    if (nd_kiekis % 2 == 0){
-        // mediana = (s.nd[nr - 1] + s.nd[nr]) / 2.0;
-        mediana = (nd_[nr - 1] + nd_[nr]) / 2.0;
-    } else {
-        // mediana = s.nd[nr];
-        mediana = nd_[nr];
-    }
+// // Medianos ieškojimas
+//     double mediana = 0;
+//     int nr = nd_kiekis / 2;
+//     if (nd_kiekis % 2 == 0){
+//         // mediana = (s.nd[nr - 1] + s.nd[nr]) / 2.0;
+//         mediana = (nd_[nr - 1] + nd_[nr]) / 2.0;
+//     } else {
+//         // mediana = s.nd[nr];
+//         mediana = nd_[nr];
+//     }
 
-// Ivertinimo apskaičiavimas naudojant medianą.
-    // s.galutinis_med = 0.4 * mediana + 0.6 * s.egz;
-    galutinis_med_ = 0.4 * mediana + 0.6 * egz_;
+// // Ivertinimo apskaičiavimas naudojant medianą.
+//     // s.galutinis_med = 0.4 * mediana + 0.6 * s.egz;
+//     galutinis_med_ = 0.4 * mediana + 0.6 * egz_;
     
-}
+// }
 
 // Funkcija, kuri skirta atspausdinti studento duomenis pagal vartotojo įvertinimo pasirinkimą (pagal vidurkį, medianą).
 void Stud_spausdinimas(Studentas &s, ostream &out, string p, string isvedimo_pasirinkimas){
@@ -621,11 +648,11 @@ void Kategorijos_Priskirimas2(Container &stud, Container &stud_Vargsiukai, strin
     }
 
     while(!stud.empty()){
-        if((pasirinkimas == "V" || pasirinkimas == "v") && stud.back().galutinis_vid < 5.0){
+        if((pasirinkimas == "V" || pasirinkimas == "v") && stud.back().getGalutinis_vid() < 5.0){
             stud_Vargsiukai.push_back(stud.back());
             stud.pop_back();
         }
-        else if((pasirinkimas == "M" || pasirinkimas == "m") && stud.back().galutinis_med < 5.0){
+        else if((pasirinkimas == "M" || pasirinkimas == "m") && stud.back().getGalutinis_med() < 5.0){
             stud_Vargsiukai.push_back(stud.back());
             stud.pop_back();
         }

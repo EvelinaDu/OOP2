@@ -1,6 +1,7 @@
 #include "../include/Mylib.h"
 #include "../include/Stud.h"
 #include "../include/timer.h"
+#include "../include/Studentas.h"
 
 
 int main() {
@@ -22,14 +23,14 @@ int main() {
     if (vektorius_arba_sarasas == "V" || vektorius_arba_sarasas == "v"){
         vector<Studentas> stud;
         vector<Studentas> stud_Vargsiukai, stud_Kietiakai;
-        Studentas s;
+        // Studentas s;
         vector<int> kiekis; 
 
         if(ivedimo_skaitymo_p == "N" || ivedimo_skaitymo_p == "n"){
-            Duom_is_failo(stud, s);
+            Duom_is_failo(stud);
         }
         else if(ivedimo_skaitymo_p == "I" || ivedimo_skaitymo_p == "i"){
-            Info_ivedimas_ranka(stud, s, n);
+            Info_ivedimas_ranka(stud, n);
         }    
         else if(ivedimo_skaitymo_p == "S" || ivedimo_skaitymo_p == "s"){
             kiekis = {1000, 10000, 100000, 1000000, 10000000};
@@ -49,7 +50,7 @@ int main() {
             rez_pasirinkimas = pasirinkimas_del_galutinio();
             rusiavimo_p = pasirinkimas_del_rusiavimo();
 
-            Duom_is_failo(stud, s);
+            Duom_is_failo(stud);
 
             n = stud.size();
             Duom_tvarkymas(stud, stud_Vargsiukai, stud_Kietiakai, rez_pasirinkimas, rusiavimo_p, isvedimo_pasirinkimas, ivedimo_skaitymo_p, skaidymo_strategija, n);
@@ -67,14 +68,16 @@ int main() {
     else{
         list<Studentas> stud;
         list<Studentas> stud_Vargsiukai, stud_Kietiakai;
-        Studentas s;
+        // Studentas s;
         list<int> kiekis;
 
         if(ivedimo_skaitymo_p == "N" || ivedimo_skaitymo_p == "n"){
-            Duom_is_failo(stud, s);
+            Duom_is_failo(stud);
+            
+
         }
         else if(ivedimo_skaitymo_p == "I" || ivedimo_skaitymo_p == "i"){
-            Info_ivedimas_ranka(stud, s, n);
+            Info_ivedimas_ranka(stud, n);
         }    
         else if(ivedimo_skaitymo_p == "S" || ivedimo_skaitymo_p == "s"){
             kiekis = {1000, 10000, 100000, 1000000, 10000000};
@@ -96,7 +99,7 @@ int main() {
             rez_pasirinkimas = pasirinkimas_del_galutinio();
             rusiavimo_p = pasirinkimas_del_rusiavimo();
 
-            Duom_is_failo(stud, s);
+            Duom_is_failo(stud);
 
             n = stud.size();
             Duom_tvarkymas(stud, stud_Vargsiukai, stud_Kietiakai, rez_pasirinkimas, rusiavimo_p, isvedimo_pasirinkimas, ivedimo_skaitymo_p, skaidymo_strategija, n);
