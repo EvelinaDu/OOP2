@@ -31,6 +31,38 @@ Studentas :: Studentas(const string& vardas, const string& pavarde, int nd_kieki
     cout << egzoIvertinimas << endl;
 }
 
+// Kopijavimo Konstruktoius
+Studentas :: Studentas(const Studentas& saltinis){
+    vardas_ = saltinis.vardas_;
+    pavarde_ = saltinis.pavarde_;
+    nd_ = saltinis.nd_;
+    egz_ = saltinis.egz_;
+    galutinis_vid_ = saltinis.galutinis_vid_;
+    galutinis_med_ = saltinis.galutinis_med_;
+
+}
+
+// Overloaded Assignment Operator - Kopijavimo priskirymo operatorius
+Studentas& Studentas :: operator = (const Studentas& saltinis){
+    if(this == &saltinis){
+        return *this;
+    }
+
+    vardas_ = saltinis.vardas_;
+    pavarde_ = saltinis.pavarde_;
+    nd_ = saltinis.nd_;
+    egz_ = saltinis.egz_;
+    galutinis_vid_ = saltinis.galutinis_vid_;
+    galutinis_med_ = saltinis.galutinis_med_;
+
+    return *this;
+};
+
+// Destruktorius
+Studentas :: ~Studentas(){
+    nd_.clear();
+};
+
 // Funkcija skirta galutiniam įvertinimui pagal vidurkį apskaičiuoti.
 void Studentas :: Ivertinimas_vid(){
     double suma = 0;
@@ -76,5 +108,4 @@ void Studentas :: Ivertinimas_med(){
     
 }
 
-Studentas :: ~Studentas(){};
 

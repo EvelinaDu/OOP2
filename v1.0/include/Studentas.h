@@ -26,7 +26,15 @@ class Studentas{
   // Konstruktoriai
   Studentas(const string& vardas, const string& pavarde, const vector <double>& nd, double egz);
   Studentas(const string& vardas, const string& pavarde, int kiekis);
+
+  // Kopijavimo Konstruktoius
+  Studentas(const Studentas& source);
+  
+  // Destruktorius
   ~Studentas();
+
+  // Overloaded Assignment Operator - Kopijavimo priskirymo operatorius
+  Studentas& operator = (const Studentas& source);
 
   // set'eriai
   void setVardas(const string& vardas) {vardas_ = vardas; }
@@ -44,6 +52,7 @@ class Studentas{
   inline double getGalutinis_vid() const { return galutinis_vid_; }
   inline double getGalutinis_med() const { return galutinis_med_; }
   
+
   void Ivertinimas_vid();
   void Ivertinimas_med();
   
