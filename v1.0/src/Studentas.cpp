@@ -36,8 +36,6 @@ Studentas :: Studentas(const Studentas& saltinis){
     pavarde_ = saltinis.pavarde_;
     nd_ = saltinis.nd_;
     egz_ = saltinis.egz_;
-    // galutinis_vid_ = saltinis.galutinis_vid_;
-    // galutinis_med_ = saltinis.galutinis_med_;
     galutinis_ = saltinis.galutinis_;
 
 }
@@ -52,8 +50,6 @@ Studentas& Studentas :: operator = (const Studentas& saltinis){
     pavarde_ = saltinis.pavarde_;
     nd_ = saltinis.nd_;
     egz_ = saltinis.egz_;
-    // galutinis_vid_ = saltinis.galutinis_vid_;
-    // galutinis_med_ = saltinis.galutinis_med_;
     galutinis_ = saltinis.galutinis_;
 
     return *this;
@@ -64,10 +60,10 @@ Studentas :: ~Studentas(){
     nd_.clear();
 };
 
-// ostream& operator <<(ostream& os, const Studentas& s){
-//     os << setw(15) << left << s.vardas_ << setw(16) << left << s.pavarde_ << setw(16) << left << fixed << setprecision(2) << s.galutinis_vid_ << endl;
-//     return os;
-// };
+ostream& operator<<(ostream& os, const Studentas& s){
+    os << setw(15) << left << s.vardas_ << setw(16) << left << s.pavarde_ << setw(16) << left << fixed << setprecision(2) << s.galutinis_;
+    return os;
+};
 
 // ostream& operator >>(ostream& os, const Studentas& s){
 
@@ -86,10 +82,8 @@ void Studentas :: Ivertinimas_vid(){
 
     double ivertinimas;
     if (nd_kiekis > 0 ){
-        // galutinis_vid_ = 0.4 * suma/nd_kiekis + 0.6 * egz_;
         galutinis_ = 0.4 * suma/nd_kiekis + 0.6 * egz_;
     } else {
-        // galutinis_vid_ =  0.6 * egz_;
         galutinis_ =  0.6 * egz_;
 
     }
@@ -101,7 +95,6 @@ void Studentas :: Ivertinimas_med(){
 
     // Jei namų darbų nėra, tai galutinį įvertinimą nustatome pagal egzaminą.
     if (nd_kiekis == 0){
-        // galutinis_med_ = 0.6 * egz_;
         galutinis_ = 0.6 * egz_;   
         return;
     }
@@ -119,7 +112,6 @@ void Studentas :: Ivertinimas_med(){
     }
 
 // Ivertinimo apskaičiavimas naudojant medianą.
-    // galutinis_med_ = 0.4 * mediana + 0.6 * egz_;
     galutinis_ = 0.4 * mediana + 0.6 * egz_;
     
 }

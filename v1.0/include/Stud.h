@@ -9,9 +9,6 @@
 template <typename Container>
 void Duom_ivedimas(Container &stud, string vardas, string pavarde);
 
-// Funkcija, kuri generuoja studento namų darbų ir egzamino įvertinimus.
-void Duom_generavimas(Studentas &s, ostream &out, int nd_kiekis);
-
 // Funkcija, kurioje klausiama kiek studentų vartotojas norėtų įtraukti, klausiama studentų vardų bei pavardžių, 
 // klausiama koks įvertinimų įvedimas(rankinis ar generavimas) ir pagal tai įvykdoma. 
 template <typename Container>
@@ -24,9 +21,6 @@ void Duom_is_failo(Container &stud);
 
 // Funkcija skirta failo generavimui pagal įrašų kiekį.
 void Stud_failu_generavimas(int kiekis);
-
-// Funkcija, kuri skirta atspausdinti studento duomenis pagal vartotojo įvertinimo pasirinkimą (pagal vidurkį, medianą).
-void Stud_spausdinimas(Studentas &s, ostream &out, string isvedimo_pasirinkimas);
 
 // Funkcija, skirta atspausdinti antraštei pagal vartoto įvertinimo pasirinkimą.
 void Rez_antraste(string pasirinkimas, ostream &out, string isvedimo_pasirinkimas);

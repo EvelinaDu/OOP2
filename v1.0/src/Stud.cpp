@@ -291,24 +291,6 @@ uniform_int_distribution<int> Ivertinimas(min_rezult, max_result);
 
 }
 
-
-// Funkcija, kuri skirta atspausdinti studento duomenis pagal vartotojo įvertinimo pasirinkimą (pagal vidurkį, medianą).
-void Stud_spausdinimas(Studentas &s, ostream &out, string isvedimo_pasirinkimas){
-    string vardas, pavarde;
-    vardas = s.getVardas();
-    pavarde = s.getPavarde();
-    double galutinis;
-    if(isvedimo_pasirinkimas  == "T" || isvedimo_pasirinkimas == "t"){
-        galutinis = s.getGalutinis();
-        out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(20) << left << fixed << setprecision(2) << galutinis  << setw(20) << left << &s << endl;
-    } else{
-        galutinis = s.getGalutinis();
-        out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(16) << left << fixed << setprecision(2) << galutinis << endl;
-    }
-    
-
-}
-
 // Funkcija, skirta atspausdinti antraštei pagal vartoto įvertinimo pasirinkimą.
 void Rez_antraste(string pasirinkimas, ostream &out, string isvedimo_pasirinkimas){
     
@@ -331,8 +313,6 @@ void Rez_antraste(string pasirinkimas, ostream &out, string isvedimo_pasirinkima
             out << "------------------------------------------------" << endl;
         }
     }
-    
-
 }
 
 // Funkcija skirta studentų rūšiavimui.
@@ -361,7 +341,8 @@ void Studentu_rusiavimas(Container &stud, string pasirinkimas){
             sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
                 return s1.getGalutinis() > s2.getGalutinis();
             });
-        } else if(pasirinkimas == "GD" || pasirinkimas == "gd" || pasirinkimas == "Gd" || pasirinkimas == "gD"){
+        }
+        else if(pasirinkimas == "GD" || pasirinkimas == "gd" || pasirinkimas == "Gd" || pasirinkimas == "gD"){
             // Rušiavimas pagal galutinį įvertinimą didėjančiai
             sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
                 return s1.getGalutinis() < s2.getGalutinis();
@@ -419,7 +400,7 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
         Rez_antraste(rez_pasirinkimas, cout, isvedimo_pasirinkimas);
 
         for (auto &studentas : stud){
-            Stud_spausdinimas(studentas, cout, isvedimo_pasirinkimas);
+            cout << studentas << endl;
         }
 
     }
@@ -431,7 +412,8 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
             Rez_antraste(rez_pasirinkimas, failasOut, isvedimo_pasirinkimas);
 
             for (auto &studentas : stud){
-            Stud_spausdinimas(studentas, failasOut, isvedimo_pasirinkimas);
+            // Stud_spausdinimas(studentas, failasOut, isvedimo_pasirinkimas);
+            failasOut << studentas << endl;
             }
 
             failasOut.close();
@@ -528,7 +510,7 @@ void FailasPgalKategorija(Container &studentai, string pasirinkimas, string isve
     Rez_antraste(pasirinkimas, failas, isvedimo_pasirinkimas);
 
     for(auto &s : studentai){
-        Stud_spausdinimas(s, failas, isvedimo_pasirinkimas);
+        failas << s << endl;
     }
 
     failas.close();
