@@ -26,14 +26,14 @@ void Duom_is_failo(Container &stud);
 void Stud_failu_generavimas(int kiekis);
 
 // Funkcija, kuri skirta atspausdinti studento duomenis pagal vartotojo įvertinimo pasirinkimą (pagal vidurkį, medianą).
-void Stud_spausdinimas(Studentas &s, ostream &out, string p, string isvedimo_pasirinkimas);
+void Stud_spausdinimas(Studentas &s, ostream &out, string isvedimo_pasirinkimas);
 
 // Funkcija, skirta atspausdinti antraštei pagal vartoto įvertinimo pasirinkimą.
 void Rez_antraste(string pasirinkimas, ostream &out, string isvedimo_pasirinkimas);
 
 // Funkcija skirta studentų rūšiavimui.
 template <typename Container>
-void Studentu_rusiavimas(Container &stud, string pasirinkimas, string galutinis_pasirinkimas);
+void Studentu_rusiavimas(Container &stud, string pasirinkimas);
 
 // Funkcija skirta rezultatams atspausdinti į terminalą (vartotojui pasirinkus 'T') arba įrašyti į failą (vartotojui pasirinkus 'F').
 template <typename Container>

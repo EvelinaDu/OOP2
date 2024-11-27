@@ -19,8 +19,7 @@ class Studentas{
   string pavarde_;
   vector <double> nd_;
   double egz_;
-  double galutinis_vid_;
-  double galutinis_med_;
+  double galutinis_;
 
   public:
   // Konstruktoriai
@@ -36,22 +35,22 @@ class Studentas{
   // Overloaded Assignment Operator - Kopijavimo priskirymo operatorius
   Studentas& operator = (const Studentas& source);
 
+  // friend ostream& operator <<(ostream& os, const Studentas& s);
+  // friend ostream& operator >>(ostream& os, const Studentas& s);
+
   // set'eriai
   void setVardas(const string& vardas) {vardas_ = vardas; }
   void setPavarde(const string& pavarde) {pavarde_ = pavarde; }
   void setNd(const vector<double>& nd) {nd_ = nd; }
   void setEgz(const double& egz) {egz_ = egz; }
-  void setGalutinis_vid(const double& ivertinimas){galutinis_vid_ = ivertinimas; }
-  void setGalutinis_med(const double& ivertinimas){galutinis_med_ = ivertinimas; }
+  void setGalutinis(const double& ivertinimas){galutinis_ = ivertinimas; }
 
   // get'eriai
   inline string getVardas() const { return vardas_; }
   inline string getPavarde() const { return pavarde_; }
   inline double getEgz() const {return egz_; }
   inline vector<double> getNd() const { return nd_; }
-  inline double getGalutinis_vid() const { return galutinis_vid_; }
-  inline double getGalutinis_med() const { return galutinis_med_; }
-  
+  inline double getGalutinis() const { return galutinis_; }
 
   void Ivertinimas_vid();
   void Ivertinimas_med();

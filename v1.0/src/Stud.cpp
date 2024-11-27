@@ -293,29 +293,17 @@ uniform_int_distribution<int> Ivertinimas(min_rezult, max_result);
 
 
 // Funkcija, kuri skirta atspausdinti studento duomenis pagal vartotojo įvertinimo pasirinkimą (pagal vidurkį, medianą).
-void Stud_spausdinimas(Studentas &s, ostream &out, string p, string isvedimo_pasirinkimas){
+void Stud_spausdinimas(Studentas &s, ostream &out, string isvedimo_pasirinkimas){
     string vardas, pavarde;
     vardas = s.getVardas();
     pavarde = s.getPavarde();
     double galutinis;
     if(isvedimo_pasirinkimas  == "T" || isvedimo_pasirinkimas == "t"){
-        if(p == "V" || p == "v"){
-            galutinis = s.getGalutinis_vid();
-            out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(20) << left << fixed << setprecision(2) << galutinis  << setw(20) << left << &s << endl;
-        }
-        else if(p == "M" || p == "m"){
-            galutinis = s.getGalutinis_med();
-            out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(20) << left << fixed << setprecision(2) << galutinis  << setw(20) << left << &s << endl;
-        }
+        galutinis = s.getGalutinis();
+        out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(20) << left << fixed << setprecision(2) << galutinis  << setw(20) << left << &s << endl;
     } else{
-        if(p == "V" || p == "v"){
-            galutinis = s.getGalutinis_vid();
-            out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(16) << left << fixed << setprecision(2) << galutinis << endl;
-        }
-        else if(p == "M" || p == "m"){
-            galutinis = s.getGalutinis_med();
-            out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(16) << left << fixed << setprecision(2) << galutinis << endl;
-        }
+        galutinis = s.getGalutinis();
+        out << setw(15) << left << vardas << setw(16) << left << pavarde << setw(16) << left << fixed << setprecision(2) << galutinis << endl;
     }
     
 
@@ -349,7 +337,7 @@ void Rez_antraste(string pasirinkimas, ostream &out, string isvedimo_pasirinkima
 
 // Funkcija skirta studentų rūšiavimui.
 template <typename Container>
-void Studentu_rusiavimas(Container &stud, string pasirinkimas, string galutinis_pasirinkimas){
+void Studentu_rusiavimas(Container &stud, string pasirinkimas){
     if constexpr (is_same_v<Container, vector<Studentas>>){
         if(pasirinkimas == "VP" || pasirinkimas == "vp" || pasirinkimas == "Vp" || pasirinkimas == "vP"){
         // Rūšiavimas pagal vardą ir pavardę
@@ -370,26 +358,14 @@ void Studentu_rusiavimas(Container &stud, string pasirinkimas, string galutinis_
         }
         else if(pasirinkimas == "GM" || pasirinkimas == "gm" || pasirinkimas == "Gm" || pasirinkimas == "gM"){
             // Rušiavimas pagal galutinį įvertinimą mažėjančiai
-            if (galutinis_pasirinkimas == "V" || galutinis_pasirinkimas == "v"){
-                sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
-                return s1.getGalutinis_vid() > s2.getGalutinis_vid();
+            sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
+                return s1.getGalutinis() > s2.getGalutinis();
             });
-            } else if(galutinis_pasirinkimas == "M" || galutinis_pasirinkimas == "m"){
-                sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
-                return s1.getGalutinis_med() > s2.getGalutinis_med();
-            });
-            }
         } else if(pasirinkimas == "GD" || pasirinkimas == "gd" || pasirinkimas == "Gd" || pasirinkimas == "gD"){
             // Rušiavimas pagal galutinį įvertinimą didėjančiai
-            if (galutinis_pasirinkimas == "V" || galutinis_pasirinkimas == "v"){
-                sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
-                return s1.getGalutinis_vid() < s2.getGalutinis_vid();
+            sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
+                return s1.getGalutinis() < s2.getGalutinis();
             });
-            } else if(galutinis_pasirinkimas == "M" || galutinis_pasirinkimas == "m"){
-                sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
-                return s1.getGalutinis_med() < s2.getGalutinis_med();
-            });
-            }
         }
     } else {
         if(pasirinkimas == "VP" || pasirinkimas == "vp" || pasirinkimas == "Vp" || pasirinkimas == "vP"){
@@ -410,26 +386,14 @@ void Studentu_rusiavimas(Container &stud, string pasirinkimas, string galutinis_
             });
         } else if(pasirinkimas == "GM" || pasirinkimas == "gm" || pasirinkimas == "Gm" || pasirinkimas == "gM"){
             // Rušiavimas pagal galutinį įvertinimą mažėjančiai
-            if (galutinis_pasirinkimas == "V" || galutinis_pasirinkimas == "v"){
-                stud.sort([](const Studentas &s1, const Studentas &s2) {
-                    return s1.getGalutinis_vid() > s2.getGalutinis_vid();
-                });
-            } else if(galutinis_pasirinkimas == "M" || galutinis_pasirinkimas == "m"){
-                stud.sort([](const Studentas &s1, const Studentas &s2){
-                    return s1.getGalutinis_med() > s2.getGalutinis_med();
-                });
-            }
+            stud.sort([](const Studentas &s1, const Studentas &s2) {
+                return s1.getGalutinis() > s2.getGalutinis();
+            });
         } else if(pasirinkimas == "GD" || pasirinkimas == "gd" || pasirinkimas == "Gd" || pasirinkimas == "gD"){
             // Rušiavimas pagal galutinį įvertinimą didėjančiai
-            if (galutinis_pasirinkimas == "V" || galutinis_pasirinkimas == "v"){
-                stud.sort([](const Studentas &s1, const Studentas &s2) {
-                    return s1.getGalutinis_vid() < s2.getGalutinis_vid();
-                });
-            } else if(galutinis_pasirinkimas == "M" || galutinis_pasirinkimas == "m"){
-                stud.sort([](const Studentas &s1, const Studentas &s2){
-                    return s1.getGalutinis_med() < s2.getGalutinis_med();
-                });
-            }
+            stud.sort([](const Studentas &s1, const Studentas &s2) {
+                return s1.getGalutinis() < s2.getGalutinis();
+            });
         }
     }
 }
@@ -441,18 +405,21 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
     ofstream failasOut;
 
     for(auto& studentas : stud){
-        studentas.Ivertinimas_vid();
-        studentas.Ivertinimas_med();
+        if(rez_pasirinkimas == "V" || rez_pasirinkimas == "v"){
+            studentas.Ivertinimas_vid();
+        } else{
+            studentas.Ivertinimas_med();
+        }
     }
 
     //Rusiavimas
-    Studentu_rusiavimas(stud, rusiavimo_p, rez_pasirinkimas);
+    Studentu_rusiavimas(stud, rusiavimo_p);
 
     if(isvedimo_pasirinkimas == "T" || isvedimo_pasirinkimas == "t"){
         Rez_antraste(rez_pasirinkimas, cout, isvedimo_pasirinkimas);
 
         for (auto &studentas : stud){
-            Stud_spausdinimas(studentas, cout, rez_pasirinkimas, isvedimo_pasirinkimas);
+            Stud_spausdinimas(studentas, cout, isvedimo_pasirinkimas);
         }
 
     }
@@ -464,7 +431,7 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
             Rez_antraste(rez_pasirinkimas, failasOut, isvedimo_pasirinkimas);
 
             for (auto &studentas : stud){
-            Stud_spausdinimas(studentas, failasOut, rez_pasirinkimas, isvedimo_pasirinkimas);
+            Stud_spausdinimas(studentas, failasOut, isvedimo_pasirinkimas);
             }
 
             failasOut.close();
@@ -484,20 +451,13 @@ template void SpausdinimasRez<list<Studentas>>(list<Studentas>&, int, string, st
 template <typename Container>
 void Kategorijos_Priskirimas1(Container &stud, Container &stud_Vargsiukai, Container &stud_Kietiakai, string pasirinkimas){
     for (const auto& studentas : stud){
-        if (pasirinkimas == "V" || pasirinkimas == "v"){
-            if (studentas.getGalutinis_vid() < 5.0){
-                stud_Vargsiukai.push_back(studentas);
-            } else {
-                stud_Kietiakai.push_back(studentas);
-            }
-        } 
-        else if(pasirinkimas == "M" || pasirinkimas == "m"){
-            if (studentas.getGalutinis_med() < 5.0){
-                stud_Vargsiukai.push_back(studentas);
-            } else {
-                stud_Kietiakai.push_back(studentas);
-            }
+
+        if (studentas.getGalutinis() < 5.0){
+            stud_Vargsiukai.push_back(studentas);
+        } else {
+            stud_Kietiakai.push_back(studentas);
         }
+
     }
 }
 
@@ -507,42 +467,26 @@ template <typename Container>
 void Kategorijos_Priskirimas2(Container &stud, Container &stud_Vargsiukai, string pasirinkimas){
 
     if constexpr (is_same_v<Container, vector<Studentas>>){
-        if (pasirinkimas == "V" || pasirinkimas == "v"){
-            sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
-            return s1.getGalutinis_vid() > s2.getGalutinis_vid();
-            });
-        } else if(pasirinkimas == "M" || pasirinkimas == "m"){
-            sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
-            return s1.getGalutinis_med() > s2.getGalutinis_med();
-            });
-        }
+        sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
+            return s1.getGalutinis() > s2.getGalutinis();
+        });
     }      
-    else if (is_same_v<Container, list<Studentas>>){
-        if (pasirinkimas == "V" || pasirinkimas == "v"){
-                stud.sort([](const Studentas &s1, const Studentas &s2) {
-                    return s1.getGalutinis_vid() > s2.getGalutinis_vid();
-                });
-        } else if(pasirinkimas == "M" || pasirinkimas == "m"){
-            stud.sort([](const Studentas &s1, const Studentas &s2){
-                return s1.getGalutinis_med() > s2.getGalutinis_med();
-            });
-        }
+    else if constexpr (is_same_v<Container, list<Studentas>>){
+        stud.sort([](const Studentas &s1, const Studentas &s2) {
+            return s1.getGalutinis() > s2.getGalutinis();
+        });
         
     }
 
     while(!stud.empty()){
-        if((pasirinkimas == "V" || pasirinkimas == "v") && stud.back().getGalutinis_vid() < 5.0){
-            stud_Vargsiukai.push_back(stud.back());
+        if(stud.back().getGalutinis() < 5.0){
+            stud_Vargsiukai.push_back(move(stud.back()));
             stud.pop_back();
-        }
-        else if((pasirinkimas == "M" || pasirinkimas == "m") && stud.back().getGalutinis_med() < 5.0){
-            stud_Vargsiukai.push_back(stud.back());
-            stud.pop_back();
-        }
-        else{
+        } else{
             break;
         }
     }
+
 
 }
 
@@ -553,25 +497,19 @@ template <typename Container>
 void Kategorijos_Priskirimas3(Container &stud, Container &stud_Vargsiukai, Container &stud_Kietiakai, string pasirinkimas){
 
     std::stable_partition(stud.begin(), stud.end(), [&](const auto &studentas){
-        if (pasirinkimas == "V" || pasirinkimas == "v"){
-            return studentas.getGalutinis_vid() >= 5.0;
-        }
-        return studentas.getGalutinis_med() >= 5.0;
+        return studentas.getGalutinis() >= 5.0;
     });
 
     while(!stud.empty()){
-        if((pasirinkimas == "V" || pasirinkimas == "v") && stud.back().getGalutinis_vid() < 5.0){
-            stud_Vargsiukai.push_back(stud.back());
-            stud.pop_back();
-        }
-        else if((pasirinkimas == "M" || pasirinkimas == "m") && stud.back().getGalutinis_med() < 5.0){
-            stud_Vargsiukai.push_back(stud.back());
+        if(stud.back().getGalutinis() < 5.0){
+            stud_Vargsiukai.push_back(move(stud.back()));
             stud.pop_back();
         }
         else{
             break;
         }
     }
+
 }
 
 
@@ -590,7 +528,7 @@ void FailasPgalKategorija(Container &studentai, string pasirinkimas, string isve
     Rez_antraste(pasirinkimas, failas, isvedimo_pasirinkimas);
 
     for(auto &s : studentai){
-        Stud_spausdinimas(s, failas, pasirinkimas, isvedimo_pasirinkimas);
+        Stud_spausdinimas(s, failas, isvedimo_pasirinkimas);
     }
 
     failas.close();
@@ -776,9 +714,10 @@ void Duom_tvarkymas(Container &stud, Container &stud_Vargsiukai, Container &stud
             cout << endl;
         }
 
+
         // Surūšiuojami pagal vartotojo pasirinkimą, nes skaidymo metu duomenis buvo sumaišyti.
-        Studentu_rusiavimas(stud_Vargsiukai, rusiavimo_p, rez_pasirinkimas);
-        Studentu_rusiavimas(stud, rusiavimo_p, rez_pasirinkimas);
+        Studentu_rusiavimas(stud_Vargsiukai, rusiavimo_p);
+        Studentu_rusiavimas(stud, rusiavimo_p);
         
 
         // Studentai įrašomi į Vargsiukai.txt failą

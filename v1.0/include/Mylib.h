@@ -29,6 +29,7 @@ using std::fixed;
 using std::setprecision;
 using std::setw;
 using std::left;
+using std::move;
 
 using std::ifstream;
 using std::ofstream;
