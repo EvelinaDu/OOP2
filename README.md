@@ -95,6 +95,30 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
 - ***3 strategija*** Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant 1 ir 2 strategiją. Jei konteineris yra parenkamas vektoriu, tai atliekama pirma strategija su funkcija 'std::stable_partition', jei sąrašu - atliekama antra strategija.
 
 
+## Duomenų įvesties ir išvesties operatoriai:
+
+- Duomenų įvesties operatorius:
+    - Naudojamas perdengtas operatorius `istream& operator>>(std::istream& is, Studentas& s)`, kuris leidžia įvesti duomenis dviem būdais: 
+        1. Rankinis įvedimas iš terminalo, naudojant `std::cin`. Vartotojas turi pateikti studentų vardus bei pavardes, įvertinimai gali būti įvesti vartotojo rankiniu būdu arba sugeneruojami atsitiktinai pagal vartotojo pasirinkimą.
+        2. Duomenų nuskaitymas iš teksto srauto (pvz.: `std::stringstream`).
+    - Operatorius priima tik du kintamuosius:
+        1. Srauto objektą: `std::istream& is`
+        2. Objektą `(Studentas& s)`, kuriame bus saugomi nuskaityti duomenys: vardas, pavardė, namų darbai ir egzamino įvertinimas.
+
+- Duomenų išvesties operatorius:
+    - Operatorius naudojamas tiek išvedimui į terminalą `std::cout`, tiek rašymui į failą `std::ofstream`.
+    - Operatorius priima tik du kintamuosius:
+        1. Srauto objektą: `std::istream& is`.
+        2. Objektą `Studentas& s`, kurio duomenys bus išvedami.
+
+
+## "Rule of three" - trijų metodų taisykė:
+
+- `Destruktorius` - atsakingas už sukurtų objektų ir jų duomenų atminties atlaisvinimą, yra kviečiamas automaitškai.
+- `Kopijavimo konstruktorius` - naudojamas, kai yra sukuriamas naujas obijektas ir duomenys yra jam perkopijuojami jau iš kito egzistuojančio objekto. 
+- `Kopijavimo priskyrimo operatorius` - naudojamas, kai jau egzistuojančiam objektui yra perrašomi kito ojbekto duomenys. 
+
+    
 ## Programos veikimo greičio (spartos) analizė ir Release'ų resultatų analizė:
 
 ### Failų generavimo laikas:
