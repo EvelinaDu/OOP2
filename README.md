@@ -115,7 +115,7 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
 ## "Rule of three" - trijų metodų taisykė:
 
 - `Destruktorius` - atsakingas už sukurtų objektų ir jų duomenų atminties atlaisvinimą, yra kviečiamas automaitškai.
-- `Kopijavimo konstruktorius` - naudojamas, kai yra sukuriamas naujas obijektas ir duomenys yra jam perkopijuojami jau iš kito egzistuojančio objekto. 
+- `Kopijavimo konstruktorius` - naudojamas, kai yra sukuriamas naujas objektas ir duomenys yra jam perkopijuojami jau iš kito egzistuojančio objekto. 
 - `Kopijavimo priskyrimo operatorius` - naudojamas, kai jau egzistuojančiam objektui yra perrašomi kito ojbekto duomenys. 
 
     
