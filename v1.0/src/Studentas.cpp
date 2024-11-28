@@ -61,13 +61,101 @@ Studentas :: ~Studentas(){
 };
 
 ostream& operator<<(ostream& os, const Studentas& s){
-    os << setw(15) << left << s.vardas_ << setw(16) << left << s.pavarde_ << setw(16) << left << fixed << setprecision(2) << s.galutinis_;
+    os << setw(15) << left << s.vardas_ << setw(16) << left << s.pavarde_ << setw(16) << left << fixed << setprecision(2) << s.galutinis_ << endl;
     return os;
 };
 
-// ostream& operator >>(ostream& os, const Studentas& s){
+istream& operator>>(std::istream& is, Studentas& s){
+    // is >> s;
+    if (&is == &std::cin){
+        cout << "Įveskite vardą, pavardę: " ;
+    }
+    is >> s.vardas_ >> s.pavarde_;
 
-// };
+    string pasirinkimas;
+    if(&is == &cin){
+        cout << "Ar norite, kad mokinio gautieji balai už namų darbus bei egzaminą būtų generuojami atsitiktinai?(Taip/Ne) ";
+        while(true){
+
+            is >> pasirinkimas;
+            std::transform(pasirinkimas.begin(), pasirinkimas.end(), pasirinkimas.begin(), ::toupper);
+            if(pasirinkimas.substr(0, 4) == "TAIP"){
+                int nd_kiekis;
+                cout << "Įveskite namų darbų kiekį: ";
+                is >> nd_kiekis;
+                s = Studentas(s.vardas_, s.pavarde_, nd_kiekis);
+            }
+            else{
+                cout << "Įveskite visus namų darbų įvertinimus. Norėdami baigti įvedimą spauskite dukart 'Enter' klavišą" << endl;
+                cin.ignore();
+                string eil;            
+                int ivertinimas;
+
+                while(true){
+                    getline(is, eil);   
+                    if(eil.empty()){
+                        break;
+                    }
+
+                    try{
+                        stringstream ss(eil);
+                        if(!(ss >> ivertinimas)){
+                            throw invalid_argument("Netinkama įvestis, įvestis nėra skaičius. ");
+                        }
+
+                        if(ivertinimas < 1 || ivertinimas > 10){
+                            throw out_of_range("Netinkama įvestis, įvertinimas turi būti nuo 1 iki 10. ");
+                        }
+                        s.nd_.push_back(ivertinimas);
+
+                    } catch (const invalid_argument &e){
+                        cout << "Klaida: " << e.what() << "Bandykite dar kartą." << endl;
+                    } catch (const out_of_range &e){
+                        cout << "Klaida: " << e.what() << "Bandykite dar kartą." << endl;
+                    }
+                }
+
+                cout << "Įveskite studento egzamino įvertinimą: ";
+                while(true){
+                    getline(cin, eil);
+                    try{
+                        stringstream ss(eil);
+                        if(!(ss >> ivertinimas)){
+                            throw invalid_argument("Netinkama įvestis, įvestis nėra skaičius. ");
+                        }
+
+                        if(ivertinimas < 1 || ivertinimas > 10){
+                            throw out_of_range("Netinkama įvestis, įvertinimas turi būti nuo 1 iki 10. ");
+                        }
+
+                        s.egz_ = ivertinimas;
+                        break;
+
+                    } catch (const invalid_argument &e){
+                        cout << "Klaida: " << e.what() << "Bandykite dar kartą. ";
+                    } catch (const out_of_range &e){
+                        cout << "Klaida: " << e.what() << "Bandykite dar kartą. ";
+                    }
+                }
+            }
+            break;  
+        }
+
+    } else{
+        vector<double> namuDarbai;
+        int ivertinimas;
+        while(is >> ivertinimas){
+            namuDarbai.push_back(ivertinimas);
+        }
+        s.egz_ = namuDarbai.back();
+        namuDarbai.pop_back();
+        s.nd_ = namuDarbai;
+
+        namuDarbai.clear();
+    }
+
+    return is;
+};
 
 
 // Funkcija skirta galutiniam įvertinimui pagal vidurkį apskaičiuoti.

@@ -15,6 +15,7 @@ using std::vector;
 
 class Studentas{
   friend std::ostream& operator<<(std::ostream& os, const Studentas& s);
+  friend std::istream& operator>>(std::istream& is, Studentas& s);
 
   private:
   string vardas_;
@@ -25,6 +26,7 @@ class Studentas{
 
   public:
   // Konstruktoriai
+  Studentas(){};
   Studentas(const string& vardas, const string& pavarde, const vector <double>& nd, double egz);
   Studentas(const string& vardas, const string& pavarde, int kiekis);
 
@@ -36,9 +38,6 @@ class Studentas{
 
   // Overloaded Assignment Operator - Kopijavimo priskirymo operatorius
   Studentas& operator=(const Studentas& saltinis);
-
-
-  // friend ostream& operator >>(ostream& os, const Studentas& s);
 
   // set'eriai
   void setVardas(const string& vardas) {vardas_ = vardas; }

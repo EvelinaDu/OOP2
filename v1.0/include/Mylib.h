@@ -5,6 +5,7 @@
 #include <list>
 
 #include <algorithm>   // sort() funkcijai
+#include <cctype>
 
 #include <random>
 #include <chrono>
@@ -34,6 +35,7 @@ using std::move;
 using std::ifstream;
 using std::ofstream;
 using std::ostream;
+using std::istream;
 
 using std::invalid_argument;
 using std::out_of_range;

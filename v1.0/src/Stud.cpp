@@ -510,6 +510,7 @@ void FailasPgalKategorija(Container &studentai, string pasirinkimas, string isve
     Rez_antraste(pasirinkimas, failas, isvedimo_pasirinkimas);
 
     for(auto &s : studentai){
+
         failas << s << endl;
     }
 
@@ -521,14 +522,15 @@ void FailasPgalKategorija(Container &studentai, string pasirinkimas, string isve
 // Funkcija, skirta vartotojui pasirinkti programos vykdymą (Įvesti - I, Nuskaityti - N, Sugeneruoti - S, Testuoti - T).
 string pasirinkimas_del_programos_vykdymo(){
     string ivedimo_skaitymo_p;
-    cout << "Pasirinkite ar norite duomenis įvesti, nuskaityti juos iš failo, sugeneruoti ar testuoti duomenų failą?(Įvesti - I, Nuskaityti - N, Sugeneruoti - S, Testuoti - T) ";
+    cout << "Pasirinkite ar norite duomenis įvesti, nuskaityti juos iš failo, sugeneruoti ar testuoti duomenų failą?(Įvesti - I, Nuskaityti - N, Sugeneruoti - S, Testuoti - T, Demonstruoti = D) ";
     while(true){
         cin >> ivedimo_skaitymo_p;
 
         // Išimčių tvarkymas skirtas ivedimo ar skaitymo pasirinkimui.
         try{
-            if(ivedimo_skaitymo_p != "N" && ivedimo_skaitymo_p != "n" && ivedimo_skaitymo_p != "I" && ivedimo_skaitymo_p != "i" && ivedimo_skaitymo_p != "S" && ivedimo_skaitymo_p != "s" && ivedimo_skaitymo_p != "T" && ivedimo_skaitymo_p != "t"){
-                throw out_of_range("Netinkama įvestis, turite pasirinkti tarp: 'I', 'N', 'S', 'T'. ");
+            std::transform(ivedimo_skaitymo_p.begin(), ivedimo_skaitymo_p.end(), ivedimo_skaitymo_p.begin(), ::toupper);
+            if(ivedimo_skaitymo_p != "N" && ivedimo_skaitymo_p != "I" && ivedimo_skaitymo_p != "S" && ivedimo_skaitymo_p != "T" && ivedimo_skaitymo_p != "D" ){
+                throw out_of_range("Netinkama įvestis, turite pasirinkti tarp: 'I', 'N', 'S', 'T', 'D'. ");
             }
             break;   // Išeiname iš while ciklo, jei įvestis teisinga.
 
