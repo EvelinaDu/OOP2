@@ -61,7 +61,7 @@ Studentas :: ~Studentas(){
 };
 
 ostream& operator<<(ostream& os, const Studentas& s){
-    os << setw(15) << left << s.vardas_ << setw(16) << left << s.pavarde_ << setw(16) << left << fixed << setprecision(2) << s.galutinis_ << endl;
+    os << setw(15) << left << s.vardas_ << setw(16) << left << s.pavarde_ << setw(16) << left << fixed << setprecision(2) << s.galutinis_;
     return os;
 };
 

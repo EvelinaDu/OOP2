@@ -66,7 +66,8 @@ int main() {
             s2.Ivertinimas_vid();
 
             cout << "\nNaudojamas išvesties operatorius: " << endl;
-            cout << s1 << s2;
+            cout << s1 << endl;
+            cout << s2 << endl;
 
             ofstream testas("Testas.txt");
             testas << s2;
@@ -74,11 +75,13 @@ int main() {
 
             cout << "\nNaudojamas kopijavimo konstruktorius: " << endl;
             Studentas s3 = s1;
-            cout << s1 << s3;
+            cout << s1 << endl;
+            cout << s3 << endl;
 
             cout << "\nNaudojamas kopijavimo operatorius: " << endl;
             s1 = s2;
-            cout << s1 << s2;
+            cout << s1 << endl;
+            cout << s2 << endl;
             
 
             // ifstream in("test_data.txt");
