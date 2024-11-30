@@ -61,12 +61,11 @@ Studentas :: ~Studentas(){
 };
 
 ostream& operator<<(ostream& os, const Studentas& s){
-    os << setw(15) << left << s.vardas_ << setw(16) << left << s.pavarde_ << setw(16) << left << fixed << setprecision(2) << s.galutinis_;
+    os << setw(15) << left << s.vardas_ << setw(16) << left << s.pavarde_ << setw(19) << left << fixed << setprecision(2) << s.galutinis_;
     return os;
 };
 
 istream& operator>>(std::istream& is, Studentas& s){
-    // is >> s;
     if (&is == &std::cin){
         cout << "Įveskite vardą, pavardę: " ;
     }

@@ -400,7 +400,7 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
         Rez_antraste(rez_pasirinkimas, cout, isvedimo_pasirinkimas);
 
         for (auto &studentas : stud){
-            cout << studentas << endl;
+            cout << studentas << setw(18) << left << &studentas << endl;
         }
 
     }
@@ -412,7 +412,6 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
             Rez_antraste(rez_pasirinkimas, failasOut, isvedimo_pasirinkimas);
 
             for (auto &studentas : stud){
-            // Stud_spausdinimas(studentas, failasOut, isvedimo_pasirinkimas);
             failasOut << studentas << endl;
             }
 
