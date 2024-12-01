@@ -1,6 +1,8 @@
 #ifndef STUDENTAS_H_INCLUDED
 #define STUDENTAS_H_INCLUDED
 
+#include "../include/Zmogus.h"
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -13,10 +15,8 @@ using std::cin;
 using std::string;
 using std::vector;
 
-class Studentas{
+class Studentas : public Zmogus{
   private:
-  string vardas_;
-  string pavarde_;
   vector <double> nd_;
   double egz_;
   double galutinis_;
@@ -47,8 +47,9 @@ class Studentas{
   void setGalutinis(const double& ivertinimas){galutinis_ = ivertinimas; }
 
   // get'eriai
-  inline string getVardas() const { return vardas_; }
-  inline string getPavarde() const { return pavarde_; }
+  string getVardas() const override { return vardas_; }
+  string getPavarde() const override { return pavarde_; }
+
   inline double getEgz() const {return egz_; }
   inline vector<double> getNd() const { return nd_; }
   inline double getGalutinis() const { return galutinis_; }
