@@ -95,6 +95,8 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
 
 - ***v1.0*** versija yra papildoma trejomis strategijomis, kurios skirtos studentų skirstymui į dvi grupes. (Strategijos aprašomos žemiau).
 
+- ***v1.0*** versija yra papildoma 'Studento' klase, tai yra, ansktesnė 'Studento' struktūra yra perdaroma į klasę. Sukurti keli 'Studento' klasės konstruktoriai, pagal kuriuos bus sukuriami 'Studento' klasės objektai, ir pridėtas destruktorius, kuris atsakingas dėl 'Studento' objektų šalinimo bei vietos atlaisvinimo. Programos kodas pakoreguotas, kad veiktų pagal naująją 'Studento' klasę.
+
 - ***v1.2*** versija papildoma "Rule of three" - trijų metodų taisykle (aprašymas pateikiamas žemiau) ir įvesties bei išvesties operatoratoriais (aprašymas pateikiamas žemiau), programoje pritaikomas išvesties operatorius tiek į failą, tiek į terminalą. Įvesties operatorius pritaikomas pavyzdyje ("D - demonstracijoje"). 
 
 - ***v1.5*** versija papildyta bazine (abstrakčia) klase 'Zmogus' ir jos išvestine (derived) klase - Studentas. 'Zmogaus' klasė yra abstrakčioji klasė, tai yra negalima sukurti žmogaus tipo objektų, tačiau galima sukurti objektus iš jos išvestinės, 'Studento' klasės.
