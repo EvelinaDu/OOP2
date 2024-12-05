@@ -20,18 +20,18 @@ int main() {
 
     string ivedimo_skaitymo_p = pasirinkimas_del_programos_vykdymo();
 
-    if (vektorius_arba_sarasas == "V" || vektorius_arba_sarasas == "v"){
+    if (vektorius_arba_sarasas == "V"){
         vector<Studentas> stud;
         vector<Studentas> stud_Vargsiukai, stud_Kietiakai;
         vector<int> kiekis; 
 
-        if(ivedimo_skaitymo_p == "N" || ivedimo_skaitymo_p == "n"){
+        if(ivedimo_skaitymo_p == "N"){
             Duom_is_failo(stud);
         }
-        else if(ivedimo_skaitymo_p == "I" || ivedimo_skaitymo_p == "i"){
+        else if(ivedimo_skaitymo_p == "I"){
             Info_ivedimas_ranka(stud, n);
         }
-        else if(ivedimo_skaitymo_p == "S" || ivedimo_skaitymo_p == "s"){
+        else if(ivedimo_skaitymo_p == "S"){
             kiekis = {1000, 10000, 100000, 1000000, 10000000};
             cout << endl;
             for (int k: kiekis){
@@ -44,7 +44,7 @@ int main() {
                 cout << endl;
             }
         }
-        else if(ivedimo_skaitymo_p == "T" || ivedimo_skaitymo_p == "t"){
+        else if(ivedimo_skaitymo_p == "T"){
             skaidymo_strategija = pasirinkimas_del_strategijos();
             rez_pasirinkimas = pasirinkimas_del_galutinio();
             rusiavimo_p = pasirinkimas_del_rusiavimo();
@@ -55,6 +55,7 @@ int main() {
             Duom_tvarkymas(stud, stud_Vargsiukai, stud_Kietiakai, rez_pasirinkimas, rusiavimo_p, isvedimo_pasirinkimas, ivedimo_skaitymo_p, skaidymo_strategija, n);
         }
         else if(ivedimo_skaitymo_p == "D"){
+            // Zmogus z;
             Studentas s1, s2;
             stringstream example("Vardas1 Pavarde1 6 10 2 6 2 2 4 10 9 6 9 10 6 4 8 7");
 
@@ -94,7 +95,7 @@ int main() {
             return 1;
         }
         
-        if(ivedimo_skaitymo_p != "S" && ivedimo_skaitymo_p != "s" && ivedimo_skaitymo_p != "T" && ivedimo_skaitymo_p != "t"){
+        if(ivedimo_skaitymo_p != "S" && ivedimo_skaitymo_p != "T" && ivedimo_skaitymo_p == "D"){
             rez_pasirinkimas = pasirinkimas_del_galutinio();
             rusiavimo_p = pasirinkimas_del_rusiavimo();
             isvedimo_pasirinkimas = pasirinkimas_isvedimo();
@@ -108,13 +109,13 @@ int main() {
         list<Studentas> stud_Vargsiukai, stud_Kietiakai;
         list<int> kiekis;
 
-        if(ivedimo_skaitymo_p == "N" || ivedimo_skaitymo_p == "n"){
+        if(ivedimo_skaitymo_p == "N"){
             Duom_is_failo(stud);
         }
-        else if(ivedimo_skaitymo_p == "I" || ivedimo_skaitymo_p == "i"){
+        else if(ivedimo_skaitymo_p == "I"){
             Info_ivedimas_ranka(stud, n);
         }    
-        else if(ivedimo_skaitymo_p == "S" || ivedimo_skaitymo_p == "s"){
+        else if(ivedimo_skaitymo_p == "S"){
             kiekis = {1000, 10000, 100000, 1000000, 10000000};
             cout << endl;
             for (int k: kiekis){
@@ -129,7 +130,7 @@ int main() {
 
             }
         }
-        else if(ivedimo_skaitymo_p == "T" || ivedimo_skaitymo_p == "t"){
+        else if(ivedimo_skaitymo_p == "T"){
             skaidymo_strategija = pasirinkimas_del_strategijos();
             rez_pasirinkimas = pasirinkimas_del_galutinio();
             rusiavimo_p = pasirinkimas_del_rusiavimo();
@@ -173,7 +174,7 @@ int main() {
         }
 
         
-        if(ivedimo_skaitymo_p != "S" && ivedimo_skaitymo_p != "s" && ivedimo_skaitymo_p != "T" && ivedimo_skaitymo_p != "t"){
+        if(ivedimo_skaitymo_p != "S" && ivedimo_skaitymo_p != "T" && ivedimo_skaitymo_p == "D"){
         rez_pasirinkimas = pasirinkimas_del_galutinio();
         rusiavimo_p = pasirinkimas_del_rusiavimo();
         isvedimo_pasirinkimas = pasirinkimas_isvedimo();
