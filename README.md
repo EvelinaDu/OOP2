@@ -95,7 +95,7 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
 
 - ***v1.0*** versija yra papildoma trejomis strategijomis, kurios skirtos studentų skirstymui į dvi grupes. (Strategijos aprašomos žemiau).
 
-- ***v1.0*** versija yra papildoma 'Studento' klase, tai yra, ansktesnė 'Studento' struktūra yra perdaroma į klasę. Sukurti keli 'Studento' klasės konstruktoriai, pagal kuriuos bus sukuriami 'Studento' klasės objektai, ir pridėtas destruktorius, kuris atsakingas dėl 'Studento' objektų šalinimo bei vietos atlaisvinimo. Programos kodas pakoreguotas, kad veiktų pagal naująją 'Studento' klasę.
+- ***v1.1*** versija yra papildoma 'Studento' klase, tai yra, ansktesnė 'Studento' struktūra yra perdaroma į klasę. Sukurti keli 'Studento' klasės konstruktoriai, pagal kuriuos bus sukuriami 'Studento' klasės objektai, ir pridėtas destruktorius, kuris atsakingas dėl 'Studento' objektų šalinimo bei vietos atlaisvinimo. Programos kodas pakoreguotas, kad veiktų pagal naująją 'Studento' klasę.
 
 - ***v1.2*** versija papildoma "Rule of three" - trijų metodų taisykle (aprašymas pateikiamas žemiau) ir įvesties bei išvesties operatoratoriais (aprašymas pateikiamas žemiau), programoje pritaikomas išvesties operatorius tiek į failą, tiek į terminalą. Įvesties operatorius pritaikomas pavyzdyje ("D - demonstracijoje"). 
 
@@ -108,7 +108,7 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
 
 - ***2 strategija*** Bendro studentų konteinerio (vector ir list) skaidymas panaudojant tik vieną naują konteinerį: "vargšiukai". Tokiu būdu, jei studentas yra vargšiukas, jį turime įkelti į naująjį "vargšiukų" konteinerį ir ištrinti iš bendro studentai konteinerio. Po šio žingsnio studentai konteineryje liks vien tik kietiakai.
 
-- ***3 strategija*** Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant 1 ir 2 strategiją. Jei konteineris yra parenkamas vektoriu, tai atliekama pirma strategija su funkcija 'std::stable_partition', jei sąrašu - atliekama antra strategija.
+- ***3 strategija*** Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant 2 strategiją. Pritaikyta std::stable_partition() funkcija.
 
 
 ## Duomenų įvesties ir išvesties operatoriai:
