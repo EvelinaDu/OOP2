@@ -294,21 +294,21 @@ uniform_int_distribution<int> Ivertinimas(min_rezult, max_result);
 // Funkcija, skirta atspausdinti antraštei pagal vartoto įvertinimo pasirinkimą.
 void Rez_antraste(string pasirinkimas, ostream &out, string isvedimo_pasirinkimas){
     
-    if (isvedimo_pasirinkimas == "T" || isvedimo_pasirinkimas == "t"){
-        if(pasirinkimas == "V" || pasirinkimas == "v"){
+    if (isvedimo_pasirinkimas == "T"){
+        if(pasirinkimas == "V"){
             out  << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Adresas atmintyje" << endl;
             out << "-------------------------------------------------------------------------" << endl;
         }
-        else if(pasirinkimas == "M" || pasirinkimas == "m"){
+        else if(pasirinkimas == "M"){
             out  << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(20) << left << "Galutinis (Med.)" << setw(20) << left << "Adresas atmintyje" << endl;
             out << "-------------------------------------------------------------------------" << endl;
         }
     } else {
-        if(pasirinkimas == "V" || pasirinkimas == "v"){
+        if(pasirinkimas == "V"){
             out  << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(16) << left << "Galutinis (Vid.)" << endl;
             out << "------------------------------------------------" << endl;
         }
-        else if(pasirinkimas == "M" || pasirinkimas == "m"){
+        else if(pasirinkimas == "M"){
             out  << setw(15) << left << "Vardas" << setw(15) << left << "Pavarde" << setw(16) << left << "Galutinis (Med.)" << endl;
             out << "------------------------------------------------" << endl;
         }
@@ -319,7 +319,7 @@ void Rez_antraste(string pasirinkimas, ostream &out, string isvedimo_pasirinkima
 template <typename Container>
 void Studentu_rusiavimas(Container &stud, string pasirinkimas){
     if constexpr (is_same_v<Container, vector<Studentas>>){
-        if(pasirinkimas == "VP" || pasirinkimas == "vp" || pasirinkimas == "Vp" || pasirinkimas == "vP"){
+        if(pasirinkimas == "VP"){
         // Rūšiavimas pagal vardą ir pavardę
             sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2) {
             if(s1.getVardas() != s2.getVardas()){
@@ -327,7 +327,7 @@ void Studentu_rusiavimas(Container &stud, string pasirinkimas){
             }
             return s1.getPavarde() < s2.getPavarde();
             });
-        } else if(pasirinkimas == "PV" || pasirinkimas == "pv" || pasirinkimas == "Pv" || pasirinkimas == "pV"){
+        } else if(pasirinkimas == "PV"){
             // Rūšiavimas pagal pavardę ir vardą
             sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2) {
             if(s1.getPavarde() != s2.getPavarde()){
@@ -336,20 +336,20 @@ void Studentu_rusiavimas(Container &stud, string pasirinkimas){
             return s1.getVardas() < s2.getVardas();
             });
         }
-        else if(pasirinkimas == "GM" || pasirinkimas == "gm" || pasirinkimas == "Gm" || pasirinkimas == "gM"){
+        else if(pasirinkimas == "GM"){
             // Rušiavimas pagal galutinį įvertinimą mažėjančiai
             sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
                 return s1.getGalutinis() > s2.getGalutinis();
             });
         }
-        else if(pasirinkimas == "GD" || pasirinkimas == "gd" || pasirinkimas == "Gd" || pasirinkimas == "gD"){
+        else if(pasirinkimas == "GD"){
             // Rušiavimas pagal galutinį įvertinimą didėjančiai
             sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
                 return s1.getGalutinis() < s2.getGalutinis();
             });
         }
     } else {
-        if(pasirinkimas == "VP" || pasirinkimas == "vp" || pasirinkimas == "Vp" || pasirinkimas == "vP"){
+        if(pasirinkimas == "VP"){
             // Rūšiavimas pagal vardą ir pavardę
             stud.sort([](const Studentas &s1, const Studentas &s2) {
                 if (s1.getVardas() != s2.getVardas()) {
@@ -357,7 +357,7 @@ void Studentu_rusiavimas(Container &stud, string pasirinkimas){
                 }
                 return s1.getPavarde() < s2.getPavarde();
             });
-        } else if(pasirinkimas == "PV" || pasirinkimas == "pv" || pasirinkimas == "Pv" || pasirinkimas == "pV"){
+        } else if(pasirinkimas == "PV"){
             // Rūšiavimas pagal pavardę ir vardą
             stud.sort([](const Studentas &s1, const Studentas &s2) {
                 if (s1.getPavarde() != s2.getPavarde()) {
@@ -365,12 +365,12 @@ void Studentu_rusiavimas(Container &stud, string pasirinkimas){
                 }
                 return s1.getVardas() < s2.getVardas();
             });
-        } else if(pasirinkimas == "GM" || pasirinkimas == "gm" || pasirinkimas == "Gm" || pasirinkimas == "gM"){
+        } else if(pasirinkimas == "GM"){
             // Rušiavimas pagal galutinį įvertinimą mažėjančiai
             stud.sort([](const Studentas &s1, const Studentas &s2) {
                 return s1.getGalutinis() > s2.getGalutinis();
             });
-        } else if(pasirinkimas == "GD" || pasirinkimas == "gd" || pasirinkimas == "Gd" || pasirinkimas == "gD"){
+        } else if(pasirinkimas == "GD"){
             // Rušiavimas pagal galutinį įvertinimą didėjančiai
             stud.sort([](const Studentas &s1, const Studentas &s2) {
                 return s1.getGalutinis() < s2.getGalutinis();
@@ -386,7 +386,7 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
     ofstream failasOut;
 
     for(auto& studentas : stud){
-        if(rez_pasirinkimas == "V" || rez_pasirinkimas == "v"){
+        if(rez_pasirinkimas == "V"){
             studentas.Ivertinimas_vid();
         } else{
             studentas.Ivertinimas_med();
@@ -396,7 +396,7 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
     //Rusiavimas
     Studentu_rusiavimas(stud, rusiavimo_p);
 
-    if(isvedimo_pasirinkimas == "T" || isvedimo_pasirinkimas == "t"){
+    if(isvedimo_pasirinkimas == "T"){
         Rez_antraste(rez_pasirinkimas, cout, isvedimo_pasirinkimas);
 
         for (auto &studentas : stud){
@@ -404,7 +404,7 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
         }
 
     }
-    else if (isvedimo_pasirinkimas == "F" || isvedimo_pasirinkimas == "f" || ivedimo_skaitymo_p == "T" || ivedimo_skaitymo_p == "t"){
+    else if (isvedimo_pasirinkimas == "F" || ivedimo_skaitymo_p == "T"){
         failasOut.open("Rez.txt");
 
         if(failasOut.is_open()){
@@ -551,7 +551,8 @@ string pasirinkimas_del_duom_strukturos(){
 
         // Išimčių tvarkymas skirtas vektoriaus arba sąrašo pasirinkimui.
         try{
-            if(vektorius_arba_sarasas != "V" && vektorius_arba_sarasas != "v" && vektorius_arba_sarasas != "S" && vektorius_arba_sarasas != "s"){
+            std::transform(vektorius_arba_sarasas.begin(), vektorius_arba_sarasas.end(), vektorius_arba_sarasas.begin(), ::toupper);
+            if(vektorius_arba_sarasas != "V" && vektorius_arba_sarasas != "S"){
                 throw out_of_range("Netinkama įvestis, turite pasirinkti tarp 'V' arba 'S'. ");
             }
             break;   // Išeiname iš while ciklo, jei įvestis teisinga.
@@ -573,8 +574,8 @@ string pasirinkimas_del_galutinio(){
 
         // Išimčių tvarkymas skirtas patikrinti ar vartotojas pasirinko norimą įvertinimą (V/M).
         try{
-
-            if(rez_pasirinkimas != "V" && rez_pasirinkimas != "v" && rez_pasirinkimas != "M" && rez_pasirinkimas != "m"){
+            std::transform(rez_pasirinkimas.begin(), rez_pasirinkimas.end(), rez_pasirinkimas.begin(), ::toupper);
+            if(rez_pasirinkimas != "V" && rez_pasirinkimas != "M"){
                 throw out_of_range("Netinkama įvestis, turite pasirinkti tarp 'V' ir 'M'. ");
             }
             break;   // Išeiname iš while ciklo, jei įvestis teisinga.
@@ -597,8 +598,8 @@ string pasirinkimas_del_rusiavimo(){
 
         // Išimčių tvarkymas skirtas patikrinti ar vartotojas pasirinko norimą įvertinimą (VP/PV/GM/GD).
         try{
-
-            if(rusiavimo_p != "VP" && rusiavimo_p != "vp" && rusiavimo_p != "Vp" && rusiavimo_p != "vP" && rusiavimo_p != "PV" && rusiavimo_p != "pv" && rusiavimo_p != "Pv" && rusiavimo_p != "pV" && rusiavimo_p != "GM" && rusiavimo_p != "gm" && rusiavimo_p != "Gm" && rusiavimo_p != "gM" && rusiavimo_p != "GD" && rusiavimo_p != "gd" && rusiavimo_p != "Gd" && rusiavimo_p != "gD" ){
+            std::transform(rusiavimo_p.begin(), rusiavimo_p.end(), rusiavimo_p.begin(), ::toupper);
+            if(rusiavimo_p != "VP" && rusiavimo_p != "PV" && rusiavimo_p != "GM" && rusiavimo_p != "GD"){
                 throw out_of_range("Netinkama įvestis, turite pasirinkti tarp 'VP', 'PV', 'GM' arba 'GD'. ");
             }
             break;   // Išeiname iš while ciklo, jei įvestis teisinga.
@@ -621,8 +622,8 @@ string pasirinkimas_isvedimo(){
 
         // Išimčių tvarkymas skirtas patikrinti ar vartotojas teisingai pasirinko, kur bus pateiktas rezultatas (T/F).
         try{
-
-            if(isvedimo_pasirinkimas != "T" && isvedimo_pasirinkimas != "t" && isvedimo_pasirinkimas != "F" && isvedimo_pasirinkimas != "f"){
+            std::transform(isvedimo_pasirinkimas.begin(), isvedimo_pasirinkimas.end(), isvedimo_pasirinkimas.begin(), ::toupper);
+            if(isvedimo_pasirinkimas != "T" && isvedimo_pasirinkimas != "F"){
                 throw out_of_range("Netinkama įvestis, turite pasirinkti tarp 'T' arba 'F'. ");
             }
             break;   // Išeiname iš while ciklo, jei įvestis teisinga.
