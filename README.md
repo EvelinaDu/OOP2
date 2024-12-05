@@ -72,6 +72,16 @@ Paleidus programą jūs pamatysite pasirinkimą dėl **duomenų struktūros**, r
     - Studentų duomenis bus pateikti failuose: 'rez.txt', 'Vargsiukai.txt', 'Kietiakai.txt' failuose.
 - Rezultatų failus rasite naujai sukurtame aplankale su pavadinimu 'Release'.
 
+***'D' - demmonstracija***:
+- Įveskite 'D' raidę.
+- Reikės pateikti vieno studento vardą bei pavardę.
+- Toliau reikės pasirinkti dėl namų darbų bei egzamino įvertinimų įrašymo ranka ar atsitiktinio generavimo.
+- Demonstracijos metu naudojami:
+    - Įvesties operatorius.
+    - Išvesties operatorius.
+    - Kopijavimo konstruktorius.
+    - Kopijavimo operatorius.
+- Toliau terminale matysite atspausdinta pavyzdį.
 
 ## Release'ų aprašymas:
 
