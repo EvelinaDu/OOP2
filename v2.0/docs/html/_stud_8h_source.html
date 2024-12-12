@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OOP: include/Stud.h išeities tekstas</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">OOP
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Paieška',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_stud_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Stud.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_stud_8h.html">Eiti į šio failo dokumentaciją.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef STUD_H_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define STUD_H_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_mylib_8h.html">Mylib.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_studentas_8h.html">Studentas.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// Funkcija, skirta studento duomenų įvedimui rankiniu būdu.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#a0aa0b42ace6d0a8cfde3d4d4499bf250">Duom_ivedimas</a>(Container &amp;stud, <span class="keywordtype">string</span> vardas, <span class="keywordtype">string</span> pavarde);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// Funkcija, kurioje klausiama kiek studentų vartotojas norėtų įtraukti, klausiama studentų vardų bei pavardžių, </span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// klausiama koks įvertinimų įvedimas(rankinis ar generavimas) ir pagal tai įvykdoma.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#a5014fa24d45bee55c49242d75ca7fb90">Info_ivedimas_ranka</a>(Container &amp;stud, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// Funkcija skirta nuskaityti studento įvertinimus iš failo.</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#ab0c1e4a57addfbe5c8e2d539d86e8452">Duom_is_failo</a>(Container &amp;stud);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// Funkcija skirta failo generavimui pagal įrašų kiekį.</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#adc5575a7eaf8d32bf865d18230657c40">Stud_failu_generavimas</a>(<span class="keywordtype">int</span> kiekis);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">// Funkcija, skirta atspausdinti antraštei pagal vartoto įvertinimo pasirinkimą.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#a89a730a748fd63b486ea7b92800447b9">Rez_antraste</a>(<span class="keywordtype">string</span> pasirinkimas, ostream &amp;out, <span class="keywordtype">string</span> isvedimo_pasirinkimas);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// Funkcija skirta studentų rūšiavimui.</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#a0911c12f44873aa8ed21a1c0d0691545">Studentu_rusiavimas</a>(Container &amp;stud, <span class="keywordtype">string</span> pasirinkimas);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">// Funkcija skirta rezultatams atspausdinti į terminalą (vartotojui pasirinkus &#39;T&#39;) arba įrašyti į failą (vartotojui pasirinkus &#39;F&#39;).</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#ac106aeb2c458a3f2b0cd91c281f58b5a">SpausdinimasRez</a>(Container &amp;stud, <span class="keywordtype">string</span> isvedimo_pasirinkimas, <span class="keywordtype">string</span> rez_pasirinkimas, <span class="keywordtype">string</span> rusiavimo_p, <span class="keywordtype">string</span> ivedimo_skaitymo_p);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">// Funkcija, skirta sukurti du naujus kontainerius vargšiukams ir kietiakams, taip studentai yra surūšiuojami į dvi grupes.</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#aa8ed62dd4487900b205e5826666c9c74">Kategorijos_Priskirimas1</a>(Container &amp;stud, Container &amp;stud_Vargsiukai, Container &amp;stud_Kietiakai);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">// Funkcija, kuri surūšiuoja studentus į dvi grupes, jei studento įvertinimas &lt; 5.0, priskiriamas &quot;Vargšiukų&quot; kontaineriui</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">// ir studentas ištrinamas iš bendro. Taip bendrame liks tik tie studentai, kurių įvertinimas &gt;= 5.0.</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#a2a55cea0630ce7752fc1f59f5b944582">Kategorijos_Priskirimas2</a>(Container &amp;stud, Container &amp;stud_Vargsiukai);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">// Funkcija, kuri surūšiuoja studentus į dvi grupes, padaryta remiantis 2 strategija (Kategorijos_Priskirimas2). Pritaikyta std::stable_partition() funkcija.</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#a278d1f73ba90563bdbd1fbf11a5aa06c">Kategorijos_Priskirimas3</a>(Container &amp;stud, Container &amp;stud_Vargsiukai);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">// Funkcija, kuri įrašo į failą pateiktą kontainerį.</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#ac27d16a77635bdc824aeac44151918cd">FailasPgalKategorija</a>(Container &amp;studentai, <span class="keywordtype">string</span> pasirinkimas, <span class="keywordtype">string</span> isvedimo_pasirinkimas, <span class="keywordtype">string</span> pav);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">// Funkcija, skirta vartotojui pasirinkti programos vykdymą (Įvesti - I, Nuskaityti - N, Sugeneruoti - S, Testuoti - T).</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keywordtype">string</span> <a class="code hl_function" href="_stud_8h.html#a8cb53fb9e57ca6dc9253e8762042cefd">pasirinkimas_del_programos_vykdymo</a>();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">// Funkcija, skirta vartotojui pasirinkti duomenų struktūrą (V - vektorius, S - sąrašas).</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="keywordtype">string</span> <a class="code hl_function" href="_stud_8h.html#af8b5d2fcc460b1efd171739876b7efd2">pasirinkimas_del_duom_strukturos</a>();</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">// Funkcija, skirta vartotojui pasirinkti galutinį įvertinimą, pagal vidurkį arba pagal medianą.</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keywordtype">string</span> <a class="code hl_function" href="_stud_8h.html#a6d3c8a47fd5e28b6cbaf7906bdaff4a1">pasirinkimas_del_galutinio</a>();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment">// Funkcija, skirta vartotojui pasirinkti pagal ką reikia surūšiuoti studentus.</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="keywordtype">string</span> <a class="code hl_function" href="_stud_8h.html#af3db77a6bfd262d9956b3649f4aa19af">pasirinkimas_del_rusiavimo</a>();</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment">// Funkcija, skirta vartotojui pasirinkti kur nori matyti rezultatą, ar terminale, ar faile.</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="keywordtype">string</span> <a class="code hl_function" href="_stud_8h.html#a92e73acb9635c8af95543b70b12d5bbd">pasirinkimas_isvedimo</a>();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment">// Funkcija, skirta vartotojui pasirinkti pagal kurią strategiją norimą skirstyti studentus į dvi grupes (1, 2, 3).</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="keywordtype">int</span> <a class="code hl_function" href="_stud_8h.html#aad3a52c86e2e2414b00747c2f8dea647">pasirinkimas_del_strategijos</a>();</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">// Funkcija skirta duomenų tvarkymui, tai rezultatų įrašymui, kategorijos priskirimui, naujų failų sukūrimui.</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="keywordtype">void</span> <a class="code hl_function" href="_stud_8h.html#a06f6817956278d58ffca0d293876efff">Duom_tvarkymas</a>(Container &amp;stud, Container &amp;stud_Vargsiukai, Container &amp;stud_Kietiakai, <span class="keywordtype">string</span> rez_pasirinkimas, <span class="keywordtype">string</span> rusiavimo_p, <span class="keywordtype">string</span> isvedimo_pasirinkimas, <span class="keywordtype">string</span> ivedimo_skaitymo_p, <span class="keywordtype">int</span> kategorijos_strategija, <span class="keywordtype">int</span> kiekis);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_mylib_8h_html"><div class="ttname"><a href="_mylib_8h.html">Mylib.h</a></div></div>
+<div class="ttc" id="a_stud_8h_html_a06f6817956278d58ffca0d293876efff"><div class="ttname"><a href="_stud_8h.html#a06f6817956278d58ffca0d293876efff">Duom_tvarkymas</a></div><div class="ttdeci">void Duom_tvarkymas(Container &amp;stud, Container &amp;stud_Vargsiukai, Container &amp;stud_Kietiakai, string rez_pasirinkimas, string rusiavimo_p, string isvedimo_pasirinkimas, string ivedimo_skaitymo_p, int kategorijos_strategija, int kiekis)</div><div class="ttdoc">Apdoroja studentų duomenis, skirsto į grupes ir išsaugo į failus.</div><div class="ttdef"><b>Definition</b> Stud.cpp:673</div></div>
+<div class="ttc" id="a_stud_8h_html_a0911c12f44873aa8ed21a1c0d0691545"><div class="ttname"><a href="_stud_8h.html#a0911c12f44873aa8ed21a1c0d0691545">Studentu_rusiavimas</a></div><div class="ttdeci">void Studentu_rusiavimas(Container &amp;stud, string pasirinkimas)</div><div class="ttdoc">Funkcija skirta studentų rūšiavimui.</div><div class="ttdef"><b>Definition</b> Stud.cpp:320</div></div>
+<div class="ttc" id="a_stud_8h_html_a0aa0b42ace6d0a8cfde3d4d4499bf250"><div class="ttname"><a href="_stud_8h.html#a0aa0b42ace6d0a8cfde3d4d4499bf250">Duom_ivedimas</a></div><div class="ttdeci">void Duom_ivedimas(Container &amp;stud, string vardas, string pavarde)</div><div class="ttdoc">Funkcija, skirta studento duomenų įvedimui rankiniu būdu.</div><div class="ttdef"><b>Definition</b> Stud.cpp:8</div></div>
+<div class="ttc" id="a_stud_8h_html_a278d1f73ba90563bdbd1fbf11a5aa06c"><div class="ttname"><a href="_stud_8h.html#a278d1f73ba90563bdbd1fbf11a5aa06c">Kategorijos_Priskirimas3</a></div><div class="ttdeci">void Kategorijos_Priskirimas3(Container &amp;stud, Container &amp;stud_Vargsiukai)</div><div class="ttdoc">Skirsto studentus į dvi grupes: &quot;vargsiukus&quot; ir &quot;kietiakus&quot;, naudojant std::stable_partition.</div><div class="ttdef"><b>Definition</b> Stud.cpp:477</div></div>
+<div class="ttc" id="a_stud_8h_html_a2a55cea0630ce7752fc1f59f5b944582"><div class="ttname"><a href="_stud_8h.html#a2a55cea0630ce7752fc1f59f5b944582">Kategorijos_Priskirimas2</a></div><div class="ttdeci">void Kategorijos_Priskirimas2(Container &amp;stud, Container &amp;stud_Vargsiukai)</div><div class="ttdoc">Funkcija skirsto studentus į dvi grupes: &quot;vargsiukus&quot; ir likusius, pašalindama &quot;vargsiukus&quot; iš pradin...</div><div class="ttdef"><b>Definition</b> Stud.cpp:448</div></div>
+<div class="ttc" id="a_stud_8h_html_a5014fa24d45bee55c49242d75ca7fb90"><div class="ttname"><a href="_stud_8h.html#a5014fa24d45bee55c49242d75ca7fb90">Info_ivedimas_ranka</a></div><div class="ttdeci">void Info_ivedimas_ranka(Container &amp;stud, int n)</div><div class="ttdoc">Surenkama bendra informacija apie studentų duomenis. Klausiama studentų vardų bei pavardžių,...</div><div class="ttdef"><b>Definition</b> Stud.cpp:75</div></div>
+<div class="ttc" id="a_stud_8h_html_a6d3c8a47fd5e28b6cbaf7906bdaff4a1"><div class="ttname"><a href="_stud_8h.html#a6d3c8a47fd5e28b6cbaf7906bdaff4a1">pasirinkimas_del_galutinio</a></div><div class="ttdeci">string pasirinkimas_del_galutinio()</div><div class="ttdoc">Leidžia vartotojui pasirinkti galutinio įvertinimo skaičiavimo metodą.</div><div class="ttdef"><b>Definition</b> Stud.cpp:567</div></div>
+<div class="ttc" id="a_stud_8h_html_a89a730a748fd63b486ea7b92800447b9"><div class="ttname"><a href="_stud_8h.html#a89a730a748fd63b486ea7b92800447b9">Rez_antraste</a></div><div class="ttdeci">void Rez_antraste(string pasirinkimas, ostream &amp;out, string isvedimo_pasirinkimas)</div><div class="ttdoc">Funkcija, skirta atspausdinti antraštei pagal vartoto įvertinimo pasirinkimą.</div><div class="ttdef"><b>Definition</b> Stud.cpp:295</div></div>
+<div class="ttc" id="a_stud_8h_html_a8cb53fb9e57ca6dc9253e8762042cefd"><div class="ttname"><a href="_stud_8h.html#a8cb53fb9e57ca6dc9253e8762042cefd">pasirinkimas_del_programos_vykdymo</a></div><div class="ttdeci">string pasirinkimas_del_programos_vykdymo()</div><div class="ttdoc">Leidžia vartotojui pasirinkti programos vykdymo režimą.</div><div class="ttdef"><b>Definition</b> Stud.cpp:521</div></div>
+<div class="ttc" id="a_stud_8h_html_a92e73acb9635c8af95543b70b12d5bbd"><div class="ttname"><a href="_stud_8h.html#a92e73acb9635c8af95543b70b12d5bbd">pasirinkimas_isvedimo</a></div><div class="ttdeci">string pasirinkimas_isvedimo()</div><div class="ttdoc">Leidžia vartotojui pasirinkti, kur nori matyti rezultatą: terminale ar faile.</div><div class="ttdef"><b>Definition</b> Stud.cpp:615</div></div>
+<div class="ttc" id="a_stud_8h_html_aa8ed62dd4487900b205e5826666c9c74"><div class="ttname"><a href="_stud_8h.html#aa8ed62dd4487900b205e5826666c9c74">Kategorijos_Priskirimas1</a></div><div class="ttdeci">void Kategorijos_Priskirimas1(Container &amp;stud, Container &amp;stud_Vargsiukai, Container &amp;stud_Kietiakai)</div><div class="ttdoc">Funkcija skirsto studentus į dvi grupes: &quot;vargsiukus&quot; ir &quot;kietiakus&quot;.</div><div class="ttdef"><b>Definition</b> Stud.cpp:433</div></div>
+<div class="ttc" id="a_stud_8h_html_aad3a52c86e2e2414b00747c2f8dea647"><div class="ttname"><a href="_stud_8h.html#aad3a52c86e2e2414b00747c2f8dea647">pasirinkimas_del_strategijos</a></div><div class="ttdeci">int pasirinkimas_del_strategijos()</div><div class="ttdoc">Leidžia vartotojui pasirinkti strategiją studentų skirstymui į dvi grupes.</div><div class="ttdef"><b>Definition</b> Stud.cpp:640</div></div>
+<div class="ttc" id="a_stud_8h_html_ab0c1e4a57addfbe5c8e2d539d86e8452"><div class="ttname"><a href="_stud_8h.html#ab0c1e4a57addfbe5c8e2d539d86e8452">Duom_is_failo</a></div><div class="ttdeci">void Duom_is_failo(Container &amp;stud)</div><div class="ttdoc">Funkcija skirta nuskaityti studento įvertinimus iš failo.</div><div class="ttdef"><b>Definition</b> Stud.cpp:165</div></div>
+<div class="ttc" id="a_stud_8h_html_ac106aeb2c458a3f2b0cd91c281f58b5a"><div class="ttname"><a href="_stud_8h.html#ac106aeb2c458a3f2b0cd91c281f58b5a">SpausdinimasRez</a></div><div class="ttdeci">void SpausdinimasRez(Container &amp;stud, string isvedimo_pasirinkimas, string rez_pasirinkimas, string rusiavimo_p, string ivedimo_skaitymo_p)</div><div class="ttdoc">Funkcija skirta rezultatams atspausdinti į terminalą (vartotojui pasirinkus 'T') arba įrašyti į failą...</div><div class="ttdef"><b>Definition</b> Stud.cpp:385</div></div>
+<div class="ttc" id="a_stud_8h_html_ac27d16a77635bdc824aeac44151918cd"><div class="ttname"><a href="_stud_8h.html#ac27d16a77635bdc824aeac44151918cd">FailasPgalKategorija</a></div><div class="ttdeci">void FailasPgalKategorija(Container &amp;studentai, string pasirinkimas, string isvedimo_pasirinkimas, string pav)</div><div class="ttdoc">Įrašo pateiktą studentų konteinerį į nurodytą failą.</div><div class="ttdef"><b>Definition</b> Stud.cpp:498</div></div>
+<div class="ttc" id="a_stud_8h_html_adc5575a7eaf8d32bf865d18230657c40"><div class="ttname"><a href="_stud_8h.html#adc5575a7eaf8d32bf865d18230657c40">Stud_failu_generavimas</a></div><div class="ttdeci">void Stud_failu_generavimas(int kiekis)</div><div class="ttdoc">Funkcija, skirta sugeneruoti studentų duomenų failą su nurodytu įrašų kiekiu.</div><div class="ttdef"><b>Definition</b> Stud.cpp:246</div></div>
+<div class="ttc" id="a_stud_8h_html_af3db77a6bfd262d9956b3649f4aa19af"><div class="ttname"><a href="_stud_8h.html#af3db77a6bfd262d9956b3649f4aa19af">pasirinkimas_del_rusiavimo</a></div><div class="ttdeci">string pasirinkimas_del_rusiavimo()</div><div class="ttdoc">Leidžia vartotojui pasirinkti rūšiavimo būdą.</div><div class="ttdef"><b>Definition</b> Stud.cpp:590</div></div>
+<div class="ttc" id="a_stud_8h_html_af8b5d2fcc460b1efd171739876b7efd2"><div class="ttname"><a href="_stud_8h.html#af8b5d2fcc460b1efd171739876b7efd2">pasirinkimas_del_duom_strukturos</a></div><div class="ttdeci">string pasirinkimas_del_duom_strukturos()</div><div class="ttdoc">Leidžia vartotojui pasirinkti duomenų struktūrą.</div><div class="ttdef"><b>Definition</b> Stud.cpp:544</div></div>
+<div class="ttc" id="a_studentas_8h_html"><div class="ttname"><a href="_studentas_8h.html">Studentas.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_stud_8h.html">Stud.h</a></li>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

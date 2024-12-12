@@ -1,0 +1,1193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OOP: src/Stud.cpp Failo Nuoroda</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">OOP
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Paieška',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_stud_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funkcijos</a>  </div>
+  <div class="headertitle"><div class="title">Stud.cpp Failo Nuoroda</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_studentas_8h_source.html">../include/Studentas.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_stud_8h_source.html">../include/Stud.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer_8h_source.html">../include/timer.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcijos</h2></td></tr>
+<tr class="memitem:a0aa0b42ace6d0a8cfde3d4d4499bf250" id="r_a0aa0b42ace6d0a8cfde3d4d4499bf250"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:a0aa0b42ace6d0a8cfde3d4d4499bf250"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0aa0b42ace6d0a8cfde3d4d4499bf250">Duom_ivedimas</a> (Container &amp;stud, string vardas, string pavarde)</td></tr>
+<tr class="memdesc:a0aa0b42ace6d0a8cfde3d4d4499bf250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcija, skirta studento duomenų įvedimui rankiniu būdu.  <br /></td></tr>
+<tr class="separator:a0aa0b42ace6d0a8cfde3d4d4499bf250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24bb3ea7b1465f21e221b91adc7b2066" id="r_a24bb3ea7b1465f21e221b91adc7b2066"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24bb3ea7b1465f21e221b91adc7b2066">Duom_ivedimas&lt; vector&lt; Studentas &gt; &gt;</a> (vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;, string, string)</td></tr>
+<tr class="separator:a24bb3ea7b1465f21e221b91adc7b2066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee1eb550bedd17dac73905729678dd06" id="r_aee1eb550bedd17dac73905729678dd06"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee1eb550bedd17dac73905729678dd06">Duom_ivedimas&lt; list&lt; Studentas &gt; &gt;</a> (list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;, string, string)</td></tr>
+<tr class="separator:aee1eb550bedd17dac73905729678dd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5014fa24d45bee55c49242d75ca7fb90" id="r_a5014fa24d45bee55c49242d75ca7fb90"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:a5014fa24d45bee55c49242d75ca7fb90"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5014fa24d45bee55c49242d75ca7fb90">Info_ivedimas_ranka</a> (Container &amp;stud, int n)</td></tr>
+<tr class="memdesc:a5014fa24d45bee55c49242d75ca7fb90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surenkama bendra informacija apie studentų duomenis. Klausiama studentų vardų bei pavardžių, koks įvertinimų įvedimas (rankinis ar generavimas) ir pagal tai įvykdoma.  <br /></td></tr>
+<tr class="separator:a5014fa24d45bee55c49242d75ca7fb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa805cb95a3fcd64de977577b971d2281" id="r_aa805cb95a3fcd64de977577b971d2281"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa805cb95a3fcd64de977577b971d2281">Info_ivedimas_ranka&lt; vector&lt; Studentas &gt; &gt;</a> (vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;, int)</td></tr>
+<tr class="separator:aa805cb95a3fcd64de977577b971d2281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a98faa26d294a437077b3c03df76c76" id="r_a3a98faa26d294a437077b3c03df76c76"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a98faa26d294a437077b3c03df76c76">Info_ivedimas_ranka&lt; list&lt; Studentas &gt; &gt;</a> (list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;, int)</td></tr>
+<tr class="separator:a3a98faa26d294a437077b3c03df76c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c1e4a57addfbe5c8e2d539d86e8452" id="r_ab0c1e4a57addfbe5c8e2d539d86e8452"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:ab0c1e4a57addfbe5c8e2d539d86e8452"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab0c1e4a57addfbe5c8e2d539d86e8452">Duom_is_failo</a> (Container &amp;stud)</td></tr>
+<tr class="memdesc:ab0c1e4a57addfbe5c8e2d539d86e8452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcija skirta nuskaityti studento įvertinimus iš failo.  <br /></td></tr>
+<tr class="separator:ab0c1e4a57addfbe5c8e2d539d86e8452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd7f703edb353258c52b51ac8f6486bc" id="r_abd7f703edb353258c52b51ac8f6486bc"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd7f703edb353258c52b51ac8f6486bc">Duom_is_failo&lt; vector&lt; Studentas &gt; &gt;</a> (vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;)</td></tr>
+<tr class="separator:abd7f703edb353258c52b51ac8f6486bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb78d8cfa6b34489591a1a2e3eab06e" id="r_a8cb78d8cfa6b34489591a1a2e3eab06e"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cb78d8cfa6b34489591a1a2e3eab06e">Duom_is_failo&lt; list&lt; Studentas &gt; &gt;</a> (list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;)</td></tr>
+<tr class="separator:a8cb78d8cfa6b34489591a1a2e3eab06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc5575a7eaf8d32bf865d18230657c40" id="r_adc5575a7eaf8d32bf865d18230657c40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc5575a7eaf8d32bf865d18230657c40">Stud_failu_generavimas</a> (int kiekis)</td></tr>
+<tr class="memdesc:adc5575a7eaf8d32bf865d18230657c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcija, skirta sugeneruoti studentų duomenų failą su nurodytu įrašų kiekiu.  <br /></td></tr>
+<tr class="separator:adc5575a7eaf8d32bf865d18230657c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a730a748fd63b486ea7b92800447b9" id="r_a89a730a748fd63b486ea7b92800447b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89a730a748fd63b486ea7b92800447b9">Rez_antraste</a> (string pasirinkimas, ostream &amp;out, string isvedimo_pasirinkimas)</td></tr>
+<tr class="memdesc:a89a730a748fd63b486ea7b92800447b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcija, skirta atspausdinti antraštei pagal vartoto įvertinimo pasirinkimą.  <br /></td></tr>
+<tr class="separator:a89a730a748fd63b486ea7b92800447b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0911c12f44873aa8ed21a1c0d0691545" id="r_a0911c12f44873aa8ed21a1c0d0691545"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:a0911c12f44873aa8ed21a1c0d0691545"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0911c12f44873aa8ed21a1c0d0691545">Studentu_rusiavimas</a> (Container &amp;stud, string pasirinkimas)</td></tr>
+<tr class="memdesc:a0911c12f44873aa8ed21a1c0d0691545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcija skirta studentų rūšiavimui.  <br /></td></tr>
+<tr class="separator:a0911c12f44873aa8ed21a1c0d0691545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac106aeb2c458a3f2b0cd91c281f58b5a" id="r_ac106aeb2c458a3f2b0cd91c281f58b5a"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:ac106aeb2c458a3f2b0cd91c281f58b5a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac106aeb2c458a3f2b0cd91c281f58b5a">SpausdinimasRez</a> (Container &amp;stud, string isvedimo_pasirinkimas, string rez_pasirinkimas, string rusiavimo_p, string ivedimo_skaitymo_p)</td></tr>
+<tr class="memdesc:ac106aeb2c458a3f2b0cd91c281f58b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcija skirta rezultatams atspausdinti į terminalą (vartotojui pasirinkus 'T') arba įrašyti į failą (vartotojui pasirinkus 'F').  <br /></td></tr>
+<tr class="separator:ac106aeb2c458a3f2b0cd91c281f58b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eeb080ec0753fce3f7868c1c9eacc7a" id="r_a0eeb080ec0753fce3f7868c1c9eacc7a"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0eeb080ec0753fce3f7868c1c9eacc7a">SpausdinimasRez&lt; vector&lt; Studentas &gt; &gt;</a> (vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;, string, string, string, string)</td></tr>
+<tr class="separator:a0eeb080ec0753fce3f7868c1c9eacc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac79157901864fc07675219843adf7fd6" id="r_ac79157901864fc07675219843adf7fd6"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac79157901864fc07675219843adf7fd6">SpausdinimasRez&lt; list&lt; Studentas &gt; &gt;</a> (list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;, string, string, string, string)</td></tr>
+<tr class="separator:ac79157901864fc07675219843adf7fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ed62dd4487900b205e5826666c9c74" id="r_aa8ed62dd4487900b205e5826666c9c74"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:aa8ed62dd4487900b205e5826666c9c74"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa8ed62dd4487900b205e5826666c9c74">Kategorijos_Priskirimas1</a> (Container &amp;stud, Container &amp;stud_Vargsiukai, Container &amp;stud_Kietiakai)</td></tr>
+<tr class="memdesc:aa8ed62dd4487900b205e5826666c9c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcija skirsto studentus į dvi grupes: "vargsiukus" ir "kietiakus".  <br /></td></tr>
+<tr class="separator:aa8ed62dd4487900b205e5826666c9c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a55cea0630ce7752fc1f59f5b944582" id="r_a2a55cea0630ce7752fc1f59f5b944582"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:a2a55cea0630ce7752fc1f59f5b944582"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2a55cea0630ce7752fc1f59f5b944582">Kategorijos_Priskirimas2</a> (Container &amp;stud, Container &amp;stud_Vargsiukai)</td></tr>
+<tr class="memdesc:a2a55cea0630ce7752fc1f59f5b944582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcija skirsto studentus į dvi grupes: "vargsiukus" ir likusius, pašalindama "vargsiukus" iš pradinio konteinerio.  <br /></td></tr>
+<tr class="separator:a2a55cea0630ce7752fc1f59f5b944582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a278d1f73ba90563bdbd1fbf11a5aa06c" id="r_a278d1f73ba90563bdbd1fbf11a5aa06c"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:a278d1f73ba90563bdbd1fbf11a5aa06c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a278d1f73ba90563bdbd1fbf11a5aa06c">Kategorijos_Priskirimas3</a> (Container &amp;stud, Container &amp;stud_Vargsiukai)</td></tr>
+<tr class="memdesc:a278d1f73ba90563bdbd1fbf11a5aa06c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skirsto studentus į dvi grupes: "vargsiukus" ir "kietiakus", naudojant std::stable_partition.  <br /></td></tr>
+<tr class="separator:a278d1f73ba90563bdbd1fbf11a5aa06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27d16a77635bdc824aeac44151918cd" id="r_ac27d16a77635bdc824aeac44151918cd"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:ac27d16a77635bdc824aeac44151918cd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac27d16a77635bdc824aeac44151918cd">FailasPgalKategorija</a> (Container &amp;studentai, string pasirinkimas, string isvedimo_pasirinkimas, string pav)</td></tr>
+<tr class="memdesc:ac27d16a77635bdc824aeac44151918cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Įrašo pateiktą studentų konteinerį į nurodytą failą.  <br /></td></tr>
+<tr class="separator:ac27d16a77635bdc824aeac44151918cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb53fb9e57ca6dc9253e8762042cefd" id="r_a8cb53fb9e57ca6dc9253e8762042cefd"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cb53fb9e57ca6dc9253e8762042cefd">pasirinkimas_del_programos_vykdymo</a> ()</td></tr>
+<tr class="memdesc:a8cb53fb9e57ca6dc9253e8762042cefd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leidžia vartotojui pasirinkti programos vykdymo režimą.  <br /></td></tr>
+<tr class="separator:a8cb53fb9e57ca6dc9253e8762042cefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b5d2fcc460b1efd171739876b7efd2" id="r_af8b5d2fcc460b1efd171739876b7efd2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8b5d2fcc460b1efd171739876b7efd2">pasirinkimas_del_duom_strukturos</a> ()</td></tr>
+<tr class="memdesc:af8b5d2fcc460b1efd171739876b7efd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leidžia vartotojui pasirinkti duomenų struktūrą.  <br /></td></tr>
+<tr class="separator:af8b5d2fcc460b1efd171739876b7efd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d3c8a47fd5e28b6cbaf7906bdaff4a1" id="r_a6d3c8a47fd5e28b6cbaf7906bdaff4a1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d3c8a47fd5e28b6cbaf7906bdaff4a1">pasirinkimas_del_galutinio</a> ()</td></tr>
+<tr class="memdesc:a6d3c8a47fd5e28b6cbaf7906bdaff4a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leidžia vartotojui pasirinkti galutinio įvertinimo skaičiavimo metodą.  <br /></td></tr>
+<tr class="separator:a6d3c8a47fd5e28b6cbaf7906bdaff4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3db77a6bfd262d9956b3649f4aa19af" id="r_af3db77a6bfd262d9956b3649f4aa19af"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3db77a6bfd262d9956b3649f4aa19af">pasirinkimas_del_rusiavimo</a> ()</td></tr>
+<tr class="memdesc:af3db77a6bfd262d9956b3649f4aa19af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leidžia vartotojui pasirinkti rūšiavimo būdą.  <br /></td></tr>
+<tr class="separator:af3db77a6bfd262d9956b3649f4aa19af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e73acb9635c8af95543b70b12d5bbd" id="r_a92e73acb9635c8af95543b70b12d5bbd"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92e73acb9635c8af95543b70b12d5bbd">pasirinkimas_isvedimo</a> ()</td></tr>
+<tr class="memdesc:a92e73acb9635c8af95543b70b12d5bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leidžia vartotojui pasirinkti, kur nori matyti rezultatą: terminale ar faile.  <br /></td></tr>
+<tr class="separator:a92e73acb9635c8af95543b70b12d5bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3a52c86e2e2414b00747c2f8dea647" id="r_aad3a52c86e2e2414b00747c2f8dea647"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad3a52c86e2e2414b00747c2f8dea647">pasirinkimas_del_strategijos</a> ()</td></tr>
+<tr class="memdesc:aad3a52c86e2e2414b00747c2f8dea647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leidžia vartotojui pasirinkti strategiją studentų skirstymui į dvi grupes.  <br /></td></tr>
+<tr class="separator:aad3a52c86e2e2414b00747c2f8dea647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f6817956278d58ffca0d293876efff" id="r_a06f6817956278d58ffca0d293876efff"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:a06f6817956278d58ffca0d293876efff"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a06f6817956278d58ffca0d293876efff">Duom_tvarkymas</a> (Container &amp;stud, Container &amp;stud_Vargsiukai, Container &amp;stud_Kietiakai, string rez_pasirinkimas, string rusiavimo_p, string isvedimo_pasirinkimas, string ivedimo_skaitymo_p, int kategorijos_strategija, int kiekis)</td></tr>
+<tr class="memdesc:a06f6817956278d58ffca0d293876efff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apdoroja studentų duomenis, skirsto į grupes ir išsaugo į failus.  <br /></td></tr>
+<tr class="separator:a06f6817956278d58ffca0d293876efff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3756ab416b29e60f437942aa7ef7f7c5" id="r_a3756ab416b29e60f437942aa7ef7f7c5"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3756ab416b29e60f437942aa7ef7f7c5">Duom_tvarkymas&lt; vector&lt; Studentas &gt; &gt;</a> (vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;stud, vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;stud_Vargsiukai, vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;stud_Kietiakai, string rez_pasirinkimas, string rusiavimo_p, string isvedimo_pasirinkimas, string ivedimo_skaitymo_p, int kategorijos_strategija, int kiekis)</td></tr>
+<tr class="separator:a3756ab416b29e60f437942aa7ef7f7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353a9452f8f7e8620f135170c7e98021" id="r_a353a9452f8f7e8620f135170c7e98021"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a353a9452f8f7e8620f135170c7e98021">Duom_tvarkymas&lt; list&lt; Studentas &gt; &gt;</a> (list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;stud, list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;stud_Vargsiukai, list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;stud_Kietiakai, string rez_pasirinkimas, string rusiavimo_p, string isvedimo_pasirinkimas, string ivedimo_skaitymo_p, int kategorijos_strategija, int kiekis)</td></tr>
+<tr class="separator:a353a9452f8f7e8620f135170c7e98021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funkcijos Dokumentacija</h2>
+<a id="ab0c1e4a57addfbe5c8e2d539d86e8452" name="ab0c1e4a57addfbe5c8e2d539d86e8452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c1e4a57addfbe5c8e2d539d86e8452">&#9670;&#160;</a></span>Duom_is_failo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Duom_is_failo </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcija skirta nuskaityti studento įvertinimus iš failo. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Konteinerio tipas (pvz., std::vector arba std::list). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stud</td><td>Konteineris, į kurį bus įvedami studentų duomenys.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Pastaba</dt><dd>Funkcija veikia tiek su vector&lt;Studentas&gt;, tiek su list&lt;Studentas&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="a8cb78d8cfa6b34489591a1a2e3eab06e" name="a8cb78d8cfa6b34489591a1a2e3eab06e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb78d8cfa6b34489591a1a2e3eab06e">&#9670;&#160;</a></span>Duom_is_failo&lt; list&lt; Studentas &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="_stud_8h.html#ab0c1e4a57addfbe5c8e2d539d86e8452">Duom_is_failo</a>&lt; list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd7f703edb353258c52b51ac8f6486bc" name="abd7f703edb353258c52b51ac8f6486bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd7f703edb353258c52b51ac8f6486bc">&#9670;&#160;</a></span>Duom_is_failo&lt; vector&lt; Studentas &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="_stud_8h.html#ab0c1e4a57addfbe5c8e2d539d86e8452">Duom_is_failo</a>&lt; vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0aa0b42ace6d0a8cfde3d4d4499bf250" name="a0aa0b42ace6d0a8cfde3d4d4499bf250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aa0b42ace6d0a8cfde3d4d4499bf250">&#9670;&#160;</a></span>Duom_ivedimas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Duom_ivedimas </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>vardas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>pavarde</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcija, skirta studento duomenų įvedimui rankiniu būdu. </p>
+<p>Ši funkcija leidžia vartotojui ranka įvesti studento namų darbų įvertinimus ir egzamino rezultatą.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Konteinerio tipas (pvz., std::vector arba std::list). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stud</td><td>Konteineris, į kurį bus įvedami studentų duomenys. </td></tr>
+    <tr><td class="paramname">vardas</td><td>Studentų vardas. </td></tr>
+    <tr><td class="paramname">pavarde</td><td>Studentų pavardė.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Pastaba</dt><dd>Funkcija veikia tiek su vector&lt;Studentas&gt;, tiek su list&lt;Studentas&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="aee1eb550bedd17dac73905729678dd06" name="aee1eb550bedd17dac73905729678dd06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee1eb550bedd17dac73905729678dd06">&#9670;&#160;</a></span>Duom_ivedimas&lt; list&lt; Studentas &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="_stud_8h.html#a0aa0b42ace6d0a8cfde3d4d4499bf250">Duom_ivedimas</a>&lt; list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a24bb3ea7b1465f21e221b91adc7b2066" name="a24bb3ea7b1465f21e221b91adc7b2066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24bb3ea7b1465f21e221b91adc7b2066">&#9670;&#160;</a></span>Duom_ivedimas&lt; vector&lt; Studentas &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="_stud_8h.html#a0aa0b42ace6d0a8cfde3d4d4499bf250">Duom_ivedimas</a>&lt; vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a06f6817956278d58ffca0d293876efff" name="a06f6817956278d58ffca0d293876efff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f6817956278d58ffca0d293876efff">&#9670;&#160;</a></span>Duom_tvarkymas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Duom_tvarkymas </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud_Vargsiukai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud_Kietiakai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>rez_pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>rusiavimo_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>isvedimo_pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>ivedimo_skaitymo_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kategorijos_strategija</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kiekis</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Apdoroja studentų duomenis, skirsto į grupes ir išsaugo į failus. </p>
+<p>Ši funkcija vykdo šiuos veiksmus:</p><ol type="1">
+<li>Spausdina pradinius studentų duomenis.</li>
+<li>Skirsto studentus į dvi grupes (vargsiukai ir kietiakai) pagal pasirinktą strategiją.</li>
+<li>Rūšiuoja studentų duomenis pagal vartotojo pasirinktą kriterijų.</li>
+<li>Įrašo rezultatus į atskirus failus (Vargsiukai.txt ir Kietiakai.txt).</li>
+</ol>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Konteinerio tipas (pvz., std::vector arba std::list). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stud</td><td>Pagrindinis konteineris, kuriame yra visi studentų duomenys. </td></tr>
+    <tr><td class="paramname">stud_Vargsiukai</td><td>Konteineris, kuriame bus saugomi studentai, nepasiekę nustatyto rezultato (vargsiukai). </td></tr>
+    <tr><td class="paramname">stud_Kietiakai</td><td>Konteineris, kuriame bus saugomi geriausi studentai (kietiakai). </td></tr>
+    <tr><td class="paramname">rez_pasirinkimas</td><td>Rezultatų išvedimo būdas (pvz., į failą ar terminalą). </td></tr>
+    <tr><td class="paramname">rusiavimo_p</td><td>Pasirinkimas nurodo, pagal ką studentų konteineris bus rūšiuojamas (pvz.: pagal vardą ir pavarde, pavardę ir vardą, galutinį įvertinimą mažėjančia tvarka, pagal galutinį įvertinimą didėjančia tvarka). </td></tr>
+    <tr><td class="paramname">isvedimo_pasirinkimas</td><td>Rezultatų failo pavadinimas (pvz., Rezultatai.txt). </td></tr>
+    <tr><td class="paramname">ivedimo_skaitymo_p</td><td>Įvedimo failo pavadinimas. </td></tr>
+    <tr><td class="paramname">kategorijos_strategija</td><td>Pasirinkta strategija studentų skirstymui į grupes (1, 2 arba 3). </td></tr>
+    <tr><td class="paramname">kiekis</td><td>Studentų įrašų skaičius (naudojamas rezultatų laikui spausdinti).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Pastaba</dt><dd>Funkcija veikia tiek su vector&lt;Studentas&gt;, tiek su list&lt;Studentas&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="a353a9452f8f7e8620f135170c7e98021" name="a353a9452f8f7e8620f135170c7e98021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353a9452f8f7e8620f135170c7e98021">&#9670;&#160;</a></span>Duom_tvarkymas&lt; list&lt; Studentas &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="_stud_8h.html#a06f6817956278d58ffca0d293876efff">Duom_tvarkymas</a>&lt; list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>stud_Vargsiukai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>stud_Kietiakai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>rez_pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>rusiavimo_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>isvedimo_pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>ivedimo_skaitymo_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kategorijos_strategija</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kiekis</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3756ab416b29e60f437942aa7ef7f7c5" name="a3756ab416b29e60f437942aa7ef7f7c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3756ab416b29e60f437942aa7ef7f7c5">&#9670;&#160;</a></span>Duom_tvarkymas&lt; vector&lt; Studentas &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="_stud_8h.html#a06f6817956278d58ffca0d293876efff">Duom_tvarkymas</a>&lt; vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>stud_Vargsiukai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>stud_Kietiakai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>rez_pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>rusiavimo_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>isvedimo_pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>ivedimo_skaitymo_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kategorijos_strategija</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kiekis</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac27d16a77635bdc824aeac44151918cd" name="ac27d16a77635bdc824aeac44151918cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac27d16a77635bdc824aeac44151918cd">&#9670;&#160;</a></span>FailasPgalKategorija()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void FailasPgalKategorija </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>isvedimo_pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>pav</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Įrašo pateiktą studentų konteinerį į nurodytą failą. </p>
+<p>Ši funkcija atidaro failą pagal nurodytą pavadinimą ir įrašo studentų duomenis iš pateikto konteinerio. Taip pat antraštė generuojama naudojant funkciją Rez_antraste.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Konteinerio tipas (pvz., std::vector arba std::list). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentai</td><td>Studentų konteineris, kuris bus įrašytas į failą. </td></tr>
+    <tr><td class="paramname">pasirinkimas</td><td>Pasirinkimas nurodantis pagal ką buvo skaičiuotas galutinis rezultatas (vidurkis ar mediana). (Skirta antraštei) </td></tr>
+    <tr><td class="paramname">isvedimo_pasirinkimas</td><td>Rezultatų išvedimo pasirinkimas (T - terminalas, F - failas). (Skirta antraštei) </td></tr>
+    <tr><td class="paramname">pav</td><td>Failo pavadinimas, į kurį bus įrašomi duomenys.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Pastaba</dt><dd>Funkcija veikia tiek su vector&lt;Studentas&gt;, tiek su list&lt;Studentas&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="a5014fa24d45bee55c49242d75ca7fb90" name="a5014fa24d45bee55c49242d75ca7fb90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5014fa24d45bee55c49242d75ca7fb90">&#9670;&#160;</a></span>Info_ivedimas_ranka()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Info_ivedimas_ranka </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Surenkama bendra informacija apie studentų duomenis. Klausiama studentų vardų bei pavardžių, koks įvertinimų įvedimas (rankinis ar generavimas) ir pagal tai įvykdoma. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Konteinerio tipas (pvz., std::vector arba std::list). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stud</td><td>Konteineris, į kurį bus įvedami studentų duomenys. </td></tr>
+    <tr><td class="paramname">n</td><td>Studentų skaičius, kurį vartotojas nori įtraukti.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Pastaba</dt><dd>Funkcija veikia tiek su vector&lt;Studentas&gt;, tiek su list&lt;Studentas&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="a3a98faa26d294a437077b3c03df76c76" name="a3a98faa26d294a437077b3c03df76c76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a98faa26d294a437077b3c03df76c76">&#9670;&#160;</a></span>Info_ivedimas_ranka&lt; list&lt; Studentas &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="_stud_8h.html#a5014fa24d45bee55c49242d75ca7fb90">Info_ivedimas_ranka</a>&lt; list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa805cb95a3fcd64de977577b971d2281" name="aa805cb95a3fcd64de977577b971d2281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa805cb95a3fcd64de977577b971d2281">&#9670;&#160;</a></span>Info_ivedimas_ranka&lt; vector&lt; Studentas &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="_stud_8h.html#a5014fa24d45bee55c49242d75ca7fb90">Info_ivedimas_ranka</a>&lt; vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8ed62dd4487900b205e5826666c9c74" name="aa8ed62dd4487900b205e5826666c9c74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ed62dd4487900b205e5826666c9c74">&#9670;&#160;</a></span>Kategorijos_Priskirimas1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Kategorijos_Priskirimas1 </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud_Vargsiukai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud_Kietiakai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcija skirsto studentus į dvi grupes: "vargsiukus" ir "kietiakus". </p>
+<p>Funkcija patikrina kiekvieno studento galutinį pažymį (getGalutinis()) ir priskiria jį į vieną iš dviejų grupių:</p><ul>
+<li>stud_Vargsiukai – jei galutinis pažymys mažesnis už 5.0.</li>
+<li>stud_Kietiakai – jei galutinis pažymys lygus arba didesnis už 5.0.</li>
+</ul>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Konteinerio tipas (pvz., std::vector arba std::list). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stud</td><td>Pradinė studentų konteineris, kurį reikia suskirstyti. </td></tr>
+    <tr><td class="paramname">stud_Vargsiukai</td><td>konteineris, į kurią bus priskirti "vargsiukai". </td></tr>
+    <tr><td class="paramname">stud_Kietiakai</td><td>konteineris, į kurią bus priskirti "kietiakai".</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Pastaba</dt><dd>Funkcija nekeičia pradinio stud konteinerio, o tik kopijuoja elementus į naujas grupes. Funkcija veikia tiek su vector&lt;Studentas&gt;, tiek su list&lt;Studentas&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="a2a55cea0630ce7752fc1f59f5b944582" name="a2a55cea0630ce7752fc1f59f5b944582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a55cea0630ce7752fc1f59f5b944582">&#9670;&#160;</a></span>Kategorijos_Priskirimas2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Kategorijos_Priskirimas2 </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud_Vargsiukai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcija skirsto studentus į dvi grupes: "vargsiukus" ir likusius, pašalindama "vargsiukus" iš pradinio konteinerio. </p>
+<p>Funkcija rūšiuoja studentų konteinerį mažėjančia tvarka pagal galutinį pažymį (getGalutinis()). Tada perkelia studentus, kurių galutinis pažymys mažesnis už 5.0, į "vargsiukų" konteinerį (stud_Vargsiukai) ir pašalina juos iš pradinio konteinerio (stud).</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Konteinerio tipas (pvz., std::vector arba std::list). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stud</td><td>Pradinis studentų konteineris, kuri bus modifikuojama (iš jos pašalinami "vargsiukai"). </td></tr>
+    <tr><td class="paramname">stud_Vargsiukai</td><td>Konteineris, į kurį bus perkelti "vargsiukai".</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Pastaba</dt><dd>Pradinis konteineris stud bus modifikuota – joje liks tik studentai, kurių galutinis pažymys &gt;= 5.0. Funkcija veikia tiek su vector&lt;Studentas&gt;, tiek su list&lt;Studentas&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="a278d1f73ba90563bdbd1fbf11a5aa06c" name="a278d1f73ba90563bdbd1fbf11a5aa06c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a278d1f73ba90563bdbd1fbf11a5aa06c">&#9670;&#160;</a></span>Kategorijos_Priskirimas3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Kategorijos_Priskirimas3 </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud_Vargsiukai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Skirsto studentus į dvi grupes: "vargsiukus" ir "kietiakus", naudojant std::stable_partition. </p>
+<p>Ši funkcija naudoja std::stable_partition metodą, kad stabiliai atskirtų studentus su galutiniu švertinimu mažesniu nei 5.0 ("vargsiukai") nuo tų, kurių pažymys &gt;= 5.0 ("kietiakai"). "Vargsiukai" perkelti į atskirą konteinerį, o pradinis konteineris modifikuojama, pašalinant "vargsiukus".</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Konteinerio tipas (pvz., std::vector arba std::list). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stud</td><td>Pradinis studentų konteineris, iš kurios bus pašalinti "vargsiukai". </td></tr>
+    <tr><td class="paramname">stud_Vargsiukai</td><td>Konteineris, į kurią bus perkelti "vargsiukai".</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Pastaba</dt><dd>Pradinis konteineris <code>stud</code> modifikuojamas – iš jo pašalinami "vargsiukai". "Vargsiukai" yra perkelti į <code>stud_Vargsiukai</code>, išsaugant jų pradines eiles. Funkcija veikia tiek su vector&lt;Studentas&gt;, tiek su list&lt;Studentas&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="af8b5d2fcc460b1efd171739876b7efd2" name="af8b5d2fcc460b1efd171739876b7efd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b5d2fcc460b1efd171739876b7efd2">&#9670;&#160;</a></span>pasirinkimas_del_duom_strukturos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string pasirinkimas_del_duom_strukturos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leidžia vartotojui pasirinkti duomenų struktūrą. </p>
+<p>Funkcija pateikia vartotojui klausimą, kokią duomenų struktūrą norima naudoti, ir užtikrina, kad įvestis būtų tinkama (V - vektorius, S - sąrašas).</p>
+<dl class="section return"><dt>Gražina</dt><dd>Pasirinktas duomenų struktūros tipas kaip string (V arba S). </dd></dl>
+
+</div>
+</div>
+<a id="a6d3c8a47fd5e28b6cbaf7906bdaff4a1" name="a6d3c8a47fd5e28b6cbaf7906bdaff4a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d3c8a47fd5e28b6cbaf7906bdaff4a1">&#9670;&#160;</a></span>pasirinkimas_del_galutinio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string pasirinkimas_del_galutinio </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leidžia vartotojui pasirinkti galutinio įvertinimo skaičiavimo metodą. </p>
+<p>Funkcija pateikia klausimą vartotojui, ar galutinį įvertinimą skaičiuoti pagal vidurkį, ar pagal medianą. Užtikrina, kad įvestis būtų tinkama (V - vidurkis, M - mediana).</p>
+<dl class="section return"><dt>Gražina</dt><dd>Pasirinktas galutinio įvertinimo metodas kaip string (V arba M). </dd></dl>
+
+</div>
+</div>
+<a id="a8cb53fb9e57ca6dc9253e8762042cefd" name="a8cb53fb9e57ca6dc9253e8762042cefd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb53fb9e57ca6dc9253e8762042cefd">&#9670;&#160;</a></span>pasirinkimas_del_programos_vykdymo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string pasirinkimas_del_programos_vykdymo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leidžia vartotojui pasirinkti programos vykdymo režimą. </p>
+<p>Funkcija pateikia vartotojui klausimą, kokį veikimo režimą pasirinkti, ir užtikrina, kad įvestis būtų viena iš galimų reikšmių: I, N, S, T, arba D. Jei įvestis netinkama, funkcija kartoja klausimą tol, kol gaunama tinkama reikšmė.</p>
+<dl class="section return"><dt>Gražina</dt><dd>Pasirinktas veikimo režimas kaip string (I, N, S, T, arba D). </dd></dl>
+
+</div>
+</div>
+<a id="af3db77a6bfd262d9956b3649f4aa19af" name="af3db77a6bfd262d9956b3649f4aa19af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3db77a6bfd262d9956b3649f4aa19af">&#9670;&#160;</a></span>pasirinkimas_del_rusiavimo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string pasirinkimas_del_rusiavimo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leidžia vartotojui pasirinkti rūšiavimo būdą. </p>
+<p>Funkcija pateikia klausimą vartotojui, pagal ką reikia surūšiuoti studentus. Užtikrina, kad įvestis būtų tinkama (VP, PV, GM, GD).</p>
+<dl class="section return"><dt>Gražina</dt><dd>Pasirinktas rūšiavimo būdas kaip string (VP, PV, GM arba GD). </dd></dl>
+
+</div>
+</div>
+<a id="aad3a52c86e2e2414b00747c2f8dea647" name="aad3a52c86e2e2414b00747c2f8dea647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3a52c86e2e2414b00747c2f8dea647">&#9670;&#160;</a></span>pasirinkimas_del_strategijos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pasirinkimas_del_strategijos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leidžia vartotojui pasirinkti strategiją studentų skirstymui į dvi grupes. </p>
+<p>Funkcija pateikia klausimą vartotojui apie pasirenkamą strategiją. Galimos strategijos:</p><ul>
+<li>'1' - Pirmoji strategija,</li>
+<li>'2' - Antroji strategija,</li>
+<li>'3' - Trečioji strategija.</li>
+</ul>
+<dl class="section return"><dt>Gražina</dt><dd>Pasirinkta strategija kaip sveikasis skaičius (1, 2 arba 3). </dd></dl>
+
+</div>
+</div>
+<a id="a92e73acb9635c8af95543b70b12d5bbd" name="a92e73acb9635c8af95543b70b12d5bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92e73acb9635c8af95543b70b12d5bbd">&#9670;&#160;</a></span>pasirinkimas_isvedimo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string pasirinkimas_isvedimo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Leidžia vartotojui pasirinkti, kur nori matyti rezultatą: terminale ar faile. </p>
+<p>Funkcija pateikia klausimą vartotojui, kur norėtų jis matyti rezultatą. Vartotojas gali pasirinkti:</p><ul>
+<li>'T' - terminale,</li>
+<li>'F' - faile.</li>
+</ul>
+<dl class="section return"><dt>Gražina</dt><dd>Pasirinktas rezultato pateikimo būdas kaip string ('T' arba 'F'). </dd></dl>
+
+</div>
+</div>
+<a id="a89a730a748fd63b486ea7b92800447b9" name="a89a730a748fd63b486ea7b92800447b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a730a748fd63b486ea7b92800447b9">&#9670;&#160;</a></span>Rez_antraste()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Rez_antraste </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>isvedimo_pasirinkimas</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcija, skirta atspausdinti antraštei pagal vartoto įvertinimo pasirinkimą. </p>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pasirinkimas</td><td>Pasirinkimas nurodantis pagal ką buvo skaičiuotas galutinis rezultatas (vidurkis ar mediana). </td></tr>
+    <tr><td class="paramname">out</td><td>Srautas, į kurį spausdinama (pvz., terminalas ar failas). </td></tr>
+    <tr><td class="paramname">isvedimo_pasirinkimas</td><td>Rezultatų išvedimo pasirinkimas (T - terminalas, F - failas). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac106aeb2c458a3f2b0cd91c281f58b5a" name="ac106aeb2c458a3f2b0cd91c281f58b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac106aeb2c458a3f2b0cd91c281f58b5a">&#9670;&#160;</a></span>SpausdinimasRez()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void SpausdinimasRez </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>isvedimo_pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>rez_pasirinkimas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>rusiavimo_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>ivedimo_skaitymo_p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcija skirta rezultatams atspausdinti į terminalą (vartotojui pasirinkus 'T') arba įrašyti į failą (vartotojui pasirinkus 'F'). </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Konteinerio tipas (pvz., std::vector arba std::list). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isvedimo_pasirinkimas</td><td>Rezultatų išvedimo pasirinkimas (T - terminalas, F - failas). </td></tr>
+    <tr><td class="paramname">rez_pasirinkimas</td><td>Pasirinkimas pagal ką skaičiuotas galutinis rezultatas (vidurkis ar mediana). </td></tr>
+    <tr><td class="paramname">rusiavimo_p</td><td>Pasirinkimas nurodo, pagal ką studentų konteineris bus rūšiuojamas (pvz.: pagal vardą ir pavarde, pavardę ir vardą, galutinį įvertinimą mažėjančia tvarka, pagal galutinį įvertinimą didėjančia tvarka). </td></tr>
+    <tr><td class="paramname">ivedimo_skaitymo_p</td><td>Pasirinkimas, kuris tikrinamas ar lygus T - Testavimui, tuo atviju bendras visų studentų konteineris yra atspausdinimas į faila Rez.txt.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Pastaba</dt><dd>Funkcija veikia tiek su vector&lt;Studentas&gt;, tiek su list&lt;Studentas&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="ac79157901864fc07675219843adf7fd6" name="ac79157901864fc07675219843adf7fd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac79157901864fc07675219843adf7fd6">&#9670;&#160;</a></span>SpausdinimasRez&lt; list&lt; Studentas &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="_stud_8h.html#ac106aeb2c458a3f2b0cd91c281f58b5a">SpausdinimasRez</a>&lt; list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0eeb080ec0753fce3f7868c1c9eacc7a" name="a0eeb080ec0753fce3f7868c1c9eacc7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eeb080ec0753fce3f7868c1c9eacc7a">&#9670;&#160;</a></span>SpausdinimasRez&lt; vector&lt; Studentas &gt; &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template void <a class="el" href="_stud_8h.html#ac106aeb2c458a3f2b0cd91c281f58b5a">SpausdinimasRez</a>&lt; vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &gt; </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc5575a7eaf8d32bf865d18230657c40" name="adc5575a7eaf8d32bf865d18230657c40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc5575a7eaf8d32bf865d18230657c40">&#9670;&#160;</a></span>Stud_failu_generavimas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Stud_failu_generavimas </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kiekis</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcija, skirta sugeneruoti studentų duomenų failą su nurodytu įrašų kiekiu. </p>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kiekis</td><td>Failo įrašų kiekis. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0911c12f44873aa8ed21a1c0d0691545" name="a0911c12f44873aa8ed21a1c0d0691545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0911c12f44873aa8ed21a1c0d0691545">&#9670;&#160;</a></span>Studentu_rusiavimas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Studentu_rusiavimas </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>stud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>pasirinkimas</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcija skirta studentų rūšiavimui. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Konteinerio tipas (pvz., std::vector arba std::list). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametrai</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pasirinkimas</td><td>Pasirinkimas nurodo, pagal ką studentų konteineris bus rūšiuojamas (pvz.: pagal vardą ir pavarde, pavardę ir vardą, galutinį įvertinimą mažėjančia tvarka, pagal galutinį įvertinimą didėjančia tvarka).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Pastaba</dt><dd>Funkcija veikia tiek su vector&lt;Studentas&gt;, tiek su list&lt;Studentas&gt;. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_stud_8cpp.html">Stud.cpp</a></li>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>
