@@ -1,4 +1,10 @@
 #include <chrono>
+/**
+ * @class Timer
+ * @brief Laiko matavimo klasė, skirta skaičiuoti programos veikimo laiką.
+ *
+ * Klasė Timer naudoja high_resolution_clock, leidžiantį tiksliai nustatyti praėjusį laiką. 
+ */
 class Timer {
   private:
     // panaudojame using
