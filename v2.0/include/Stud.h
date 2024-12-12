@@ -5,7 +5,6 @@
 #include "Studentas.h"
 
 
-// Funkcija, skirta studento duomenų įvedimui rankiniu būdu.
 /**
  * @brief Funkcija, skirta studento duomenų įvedimui rankiniu būdu.
  * 
@@ -21,8 +20,6 @@
 template <typename Container>
 void Duom_ivedimas(Container &stud, string vardas, string pavarde);
 
-// Funkcija, kurioje klausiama kiek studentų vartotojas norėtų įtraukti, klausiama studentų vardų bei pavardžių, 
-// klausiama koks įvertinimų įvedimas(rankinis ar generavimas) ir pagal tai įvykdoma.
 /** 
  * @brief Surenkama bendra informacija apie studentų duomenis. Klausiama studentų vardų bei pavardžių, koks įvertinimų įvedimas (rankinis ar generavimas) ir pagal tai įvykdoma.
  * @tparam Container Konteinerio tipas (pvz., std::vector arba std::list).
@@ -34,7 +31,6 @@ void Duom_ivedimas(Container &stud, string vardas, string pavarde);
 template <typename Container>
 void Info_ivedimas_ranka(Container &stud, int n);
 
-// Funkcija skirta nuskaityti studento įvertinimus iš failo.
 /** 
  * @brief Funkcija skirta nuskaityti studento įvertinimus iš failo.
  * @tparam Container Konteinerio tipas (pvz., std::vector arba std::list).
@@ -45,14 +41,12 @@ void Info_ivedimas_ranka(Container &stud, int n);
 template <typename Container>
 void Duom_is_failo(Container &stud);
 
-// Funkcija skirta failo generavimui pagal įrašų kiekį.
 /** 
  * @brief Funkcija, skirta sugeneruoti studentų duomenų failą su nurodytu įrašų kiekiu.
  * @param kiekis Failo įrašų kiekis.
 */
 void Stud_failu_generavimas(int kiekis);
 
-// Funkcija, skirta atspausdinti antraštei pagal vartoto įvertinimo pasirinkimą.
 /**
  * @brief Funkcija, skirta atspausdinti antraštei pagal vartoto įvertinimo pasirinkimą.
  * @param pasirinkimas Pasirinkimas nurodantis pagal ką buvo skaičiuotas galutinis rezultatas (vidurkis ar mediana).
@@ -61,7 +55,6 @@ void Stud_failu_generavimas(int kiekis);
  */
 void Rez_antraste(string pasirinkimas, ostream &out, string isvedimo_pasirinkimas);
 
-// Funkcija skirta studentų rūšiavimui.
 /** 
  * @brief Funkcija skirta studentų rūšiavimui.
  * @tparam Container Konteinerio tipas (pvz., std::vector arba std::list).
@@ -72,7 +65,6 @@ void Rez_antraste(string pasirinkimas, ostream &out, string isvedimo_pasirinkima
 template <typename Container>
 void Studentu_rusiavimas(Container &stud, string pasirinkimas);
 
-// Funkcija skirta rezultatams atspausdinti į terminalą (vartotojui pasirinkus 'T') arba įrašyti į failą (vartotojui pasirinkus 'F').
 /**
  * @brief Funkcija skirta rezultatams atspausdinti į terminalą (vartotojui pasirinkus 'T') arba įrašyti į failą (vartotojui pasirinkus 'F').
  * @tparam Container Konteinerio tipas (pvz., std::vector arba std::list).
@@ -86,7 +78,6 @@ void Studentu_rusiavimas(Container &stud, string pasirinkimas);
 template <typename Container>
 void SpausdinimasRez(Container &stud, string isvedimo_pasirinkimas, string rez_pasirinkimas, string rusiavimo_p, string ivedimo_skaitymo_p);
 
-// Funkcija, skirta sukurti du naujus kontainerius vargšiukams ir kietiakams, taip studentai yra surūšiuojami į dvi grupes.
 /**
  * @brief Funkcija skirsto studentus į dvi grupes: "vargsiukus" ir "kietiakus".
  * 
@@ -105,8 +96,6 @@ void SpausdinimasRez(Container &stud, string isvedimo_pasirinkimas, string rez_p
 template <typename Container>
 void Kategorijos_Priskirimas1(Container &stud, Container &stud_Vargsiukai, Container &stud_Kietiakai);
 
-// Funkcija, kuri surūšiuoja studentus į dvi grupes, jei studento įvertinimas < 5.0, priskiriamas "Vargšiukų" kontaineriui
-// ir studentas ištrinamas iš bendro. Taip bendrame liks tik tie studentai, kurių įvertinimas >= 5.0.
 /**
  * @brief Funkcija skirsto studentus į dvi grupes: "vargsiukus" ir likusius, pašalindama "vargsiukus" iš pradinio konteinerio.
  * 
@@ -125,7 +114,6 @@ void Kategorijos_Priskirimas1(Container &stud, Container &stud_Vargsiukai, Conta
 template <typename Container>
 void Kategorijos_Priskirimas2(Container &stud, Container &stud_Vargsiukai);
 
-// Funkcija, kuri surūšiuoja studentus į dvi grupes, padaryta remiantis 2 strategija (Kategorijos_Priskirimas2). Pritaikyta std::stable_partition() funkcija.
 /**
  * @brief Skirsto studentus į dvi grupes: "vargsiukus" ir "kietiakus", naudojant std::stable_partition.
  * 
@@ -144,7 +132,6 @@ void Kategorijos_Priskirimas2(Container &stud, Container &stud_Vargsiukai);
 template <typename Container>
 void Kategorijos_Priskirimas3(Container &stud, Container &stud_Vargsiukai);
 
-// Funkcija, kuri įrašo į failą pateiktą kontainerį.
 /**
  * @brief Įrašo pateiktą studentų konteinerį į nurodytą failą.
  * 
@@ -162,7 +149,6 @@ void Kategorijos_Priskirimas3(Container &stud, Container &stud_Vargsiukai);
 template <typename Container>
 void FailasPgalKategorija(Container &studentai, string pasirinkimas, string isvedimo_pasirinkimas, string pav);
 
-// Funkcija, skirta vartotojui pasirinkti programos vykdymą (Įvesti - I, Nuskaityti - N, Sugeneruoti - S, Testuoti - T).
 /**
  * @brief Leidžia vartotojui pasirinkti programos vykdymo režimą.
  * 
@@ -174,7 +160,6 @@ void FailasPgalKategorija(Container &studentai, string pasirinkimas, string isve
  */
 string pasirinkimas_del_programos_vykdymo();
 
-// Funkcija, skirta vartotojui pasirinkti duomenų struktūrą (V - vektorius, S - sąrašas).
 /**
  * @brief Leidžia vartotojui pasirinkti duomenų struktūrą.
  * 
@@ -185,7 +170,6 @@ string pasirinkimas_del_programos_vykdymo();
  */
 string pasirinkimas_del_duom_strukturos();
 
-// Funkcija, skirta vartotojui pasirinkti galutinį įvertinimą, pagal vidurkį arba pagal medianą.
 /**
  * @brief Leidžia vartotojui pasirinkti galutinio įvertinimo skaičiavimo metodą.
  * 
@@ -196,7 +180,6 @@ string pasirinkimas_del_duom_strukturos();
  */
 string pasirinkimas_del_galutinio();
 
-// Funkcija, skirta vartotojui pasirinkti pagal ką reikia surūšiuoti studentus.
 /**
  * @brief Leidžia vartotojui pasirinkti rūšiavimo būdą.
  * 
@@ -207,7 +190,6 @@ string pasirinkimas_del_galutinio();
  */
 string pasirinkimas_del_rusiavimo();
 
-// Funkcija, skirta vartotojui pasirinkti kur nori matyti rezultatą, ar terminale, ar faile.
 /**
  * @brief Leidžia vartotojui pasirinkti, kur nori matyti rezultatą: terminale ar faile.
  * 
@@ -219,7 +201,6 @@ string pasirinkimas_del_rusiavimo();
  */
 string pasirinkimas_isvedimo();
 
-// Funkcija, skirta vartotojui pasirinkti pagal kurią strategiją norimą skirstyti studentus į dvi grupes (1, 2, 3).
 /**
  * @brief Leidžia vartotojui pasirinkti strategiją studentų skirstymui į dvi grupes.
  * 
@@ -233,7 +214,6 @@ string pasirinkimas_isvedimo();
  */
 int pasirinkimas_del_strategijos();
 
-// Funkcija skirta duomenų tvarkymui, tai rezultatų įrašymui, kategorijos priskirimui, naujų failų sukūrimui.
 /**
  * @brief Apdoroja studentų duomenis, skirsto į grupes ir išsaugo į failus.
  * 

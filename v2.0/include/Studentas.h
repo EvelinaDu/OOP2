@@ -29,7 +29,6 @@ class Studentas : public Zmogus{
   double galutinis_;    /**< Egzamino įvertinimas */
 
   public:
-  // Konstruktoriai
 
   /**
    * @brief Numatytasis konstruktorius.
@@ -56,7 +55,6 @@ class Studentas : public Zmogus{
    */
   Studentas(const string& vardas, const string& pavarde, int kiekis);
 
-  // Kopijavimo Konstruktoius
   /**
    * @brief Kopijavimo konstruktorius.
    * Leidžia sukurti naują Studentas objektą, kopijuojant duomenis iš kito objekto.
@@ -64,7 +62,6 @@ class Studentas : public Zmogus{
    */
   Studentas(const Studentas& saltinis);
   
-  // Destruktorius
   /**
    * @brief Destruktorius.
    * 
@@ -72,7 +69,6 @@ class Studentas : public Zmogus{
    */
   ~Studentas();
 
-  // Overloaded Assignment Operator - Kopijavimo priskirymo operatorius
   /**
    * @brief Kopijavimo priskyrimo operatorius.
    * Leidžia priskirti vieno Studento duomenis kitam Studento klasės objektui.
@@ -108,8 +104,6 @@ class Studentas : public Zmogus{
    */
   friend std::istream& operator>>(std::istream& is, Studentas& s);
 
-  // set'eriai
-
   /**
    * @brief Nustato studento vardą.
    * @param vardas Naujas vardas.
@@ -140,7 +134,6 @@ class Studentas : public Zmogus{
    */
   void setGalutinis(const double& ivertinimas){galutinis_ = ivertinimas; }
 
-  // get'eriai
 
   /**
    * @brief Gauti studento vardą.
