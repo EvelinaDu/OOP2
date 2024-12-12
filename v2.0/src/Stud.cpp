@@ -382,7 +382,7 @@ void Studentu_rusiavimas(Container &stud, string pasirinkimas){
 
 // Funkcija skirta rezultatams atspausdinti į terminalą (vartotojui pasirinkus 'T') arba įrašyti į failą (vartotojui pasirinkus 'F').
 template <typename Container>
-void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, string rez_pasirinkimas, string rusiavimo_p, string ivedimo_skaitymo_p){
+void SpausdinimasRez(Container &stud, string isvedimo_pasirinkimas, string rez_pasirinkimas, string rusiavimo_p, string ivedimo_skaitymo_p){
     ofstream failasOut;
 
     for(auto& studentas : stud){
@@ -424,13 +424,13 @@ void SpausdinimasRez(Container &stud, int n, string isvedimo_pasirinkimas, strin
     }
 }
 
-template void SpausdinimasRez<vector<Studentas>>(vector<Studentas>&, int, string, string, string, string);
-template void SpausdinimasRez<list<Studentas>>(list<Studentas>&, int, string, string, string, string);
+template void SpausdinimasRez<vector<Studentas>>(vector<Studentas>&, string, string, string, string);
+template void SpausdinimasRez<list<Studentas>>(list<Studentas>&, string, string, string, string);
 
 
 // Funkcija, skirta sukurti du naujus kontainerius vargšiukams ir kietiakams, taip studentai yra surūšiuojami į dvi grupes.
 template <typename Container>
-void Kategorijos_Priskirimas1(Container &stud, Container &stud_Vargsiukai, Container &stud_Kietiakai, string pasirinkimas){
+void Kategorijos_Priskirimas1(Container &stud, Container &stud_Vargsiukai, Container &stud_Kietiakai){
     for (const auto& studentas : stud){
 
         if (studentas.getGalutinis() < 5.0){
@@ -445,7 +445,7 @@ void Kategorijos_Priskirimas1(Container &stud, Container &stud_Vargsiukai, Conta
 // Funkcija, kuri surūšiuoja studentus į dvi grupes, jei studento įvertinimas < 5.0, priskiriamas "Vargšiukų" kontaineriui
 // ir studentas ištrinamas iš bendro. Taip bendrame liks tik tie studentai, kurių įvertinimas >= 5.0.
 template <typename Container>
-void Kategorijos_Priskirimas2(Container &stud, Container &stud_Vargsiukai, string pasirinkimas){
+void Kategorijos_Priskirimas2(Container &stud, Container &stud_Vargsiukai){
 
     if constexpr (is_same_v<Container, vector<Studentas>>){
         sort(begin(stud), end(stud), [](const Studentas &s1, const Studentas &s2){
@@ -474,7 +474,7 @@ void Kategorijos_Priskirimas2(Container &stud, Container &stud_Vargsiukai, strin
 
 // Funkcija, kuri surūšiuoja studentus į dvi grupes, padaryta remiantis 2 strategija (Kategorijos_Priskirimas2). Pritaikyta std::stable_partition() funkcija.
 template <typename Container>
-void Kategorijos_Priskirimas3(Container &stud, Container &stud_Vargsiukai, Container &stud_Kietiakai, string pasirinkimas){
+void Kategorijos_Priskirimas3(Container &stud, Container &stud_Vargsiukai){
 
     std::stable_partition(stud.begin(), stud.end(), [&](const auto &studentas){
         return studentas.getGalutinis() >= 5.0;
@@ -672,27 +672,27 @@ int pasirinkimas_del_strategijos(){
 template <typename Container>
 void Duom_tvarkymas(Container &stud, Container &stud_Vargsiukai, Container &stud_Kietiakai, string rez_pasirinkimas, string rusiavimo_p, string isvedimo_pasirinkimas, string ivedimo_skaitymo_p, int kategorijos_strategija, int kiekis){
         cout << endl;
-        SpausdinimasRez(stud, kiekis, isvedimo_pasirinkimas, rez_pasirinkimas, rusiavimo_p, ivedimo_skaitymo_p);
+        SpausdinimasRez(stud, isvedimo_pasirinkimas, rez_pasirinkimas, rusiavimo_p, ivedimo_skaitymo_p);
         cout << endl;
 
         if (kategorijos_strategija == 1){
             // Studentų rūšiavimas į dvi grupes pagal 1 strategiją.
             Timer t1;
-            Kategorijos_Priskirimas1(stud, stud_Vargsiukai, stud_Kietiakai, rez_pasirinkimas);
+            Kategorijos_Priskirimas1(stud, stud_Vargsiukai, stud_Kietiakai);
             cout << "Failo iš "<< kiekis << " įrašų rūšiavimas į dvi grupes laikas: " << t1.elapsed() << " s.\n";
             cout << endl;
 
         } else if (kategorijos_strategija == 2){
             // Studentų rūšiavimas į dvi grupes pagal 2 strategiją.
             Timer t1;
-            Kategorijos_Priskirimas2(stud, stud_Vargsiukai, rez_pasirinkimas);
+            Kategorijos_Priskirimas2(stud, stud_Vargsiukai);
             cout << "Failo iš "<< kiekis << " įrašų rūšiavimas į dvi grupes laikas: " << t1.elapsed() << " s.\n";
             cout << endl;
 
         } else if (kategorijos_strategija == 3){
             // Studentų rūšiavimas į dvi grupes pagal 3 strategiją.
             Timer t1;
-            Kategorijos_Priskirimas3(stud, stud_Vargsiukai, stud_Kietiakai, rez_pasirinkimas);
+            Kategorijos_Priskirimas3(stud, stud_Vargsiukai);
             cout << "Failo iš "<< kiekis << " įrašų rūšiavimas į dvi grupes laikas: " << t1.elapsed() << " s.\n";
             cout << endl;
         }

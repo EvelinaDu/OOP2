@@ -100,7 +100,7 @@ int main() {
             rusiavimo_p = pasirinkimas_del_rusiavimo();
             isvedimo_pasirinkimas = pasirinkimas_isvedimo();
             n = stud.size();
-            SpausdinimasRez(stud, n, isvedimo_pasirinkimas, rez_pasirinkimas, rusiavimo_p, ivedimo_skaitymo_p);
+            SpausdinimasRez(stud, isvedimo_pasirinkimas, rez_pasirinkimas, rusiavimo_p, ivedimo_skaitymo_p);
         }
 
     } 
@@ -179,7 +179,7 @@ int main() {
         rusiavimo_p = pasirinkimas_del_rusiavimo();
         isvedimo_pasirinkimas = pasirinkimas_isvedimo();
         n = stud.size();
-        SpausdinimasRez(stud, n, isvedimo_pasirinkimas, rez_pasirinkimas, rusiavimo_p, ivedimo_skaitymo_p);
+        SpausdinimasRez(stud, isvedimo_pasirinkimas, rez_pasirinkimas, rusiavimo_p, ivedimo_skaitymo_p);
 
         }
     }
