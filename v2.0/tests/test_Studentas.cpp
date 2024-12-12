@@ -29,5 +29,27 @@ TEST(StudentasTest, AssignmentOperator) {
     EXPECT_EQ(s2.getGalutinis(), s1.getGalutinis());
 }
 
+// Testas galutinio įvertinimo apskaičiavimui pagal vidurkį
+TEST(StudentasTest, IvertinimasVidurkis) {
+    std::vector<double> nd = {8.0, 7.0, 9.0};
+    Studentas s("Marius", "Mariunaitis", nd, 8.0);
+    
+    s.Ivertinimas_vid();
+
+    double expectedGalutinis = 0.4 * 8.0 + 0.6 * 8.0;
+    EXPECT_EQ(s.getGalutinis(), expectedGalutinis);
+}
+
+// Testas galutinio įvertinimo apskaičiavimui pagal medianą
+TEST(StudentasTest, IvertinimasMediana) {
+    std::vector<double> nd = {8.0, 7.0, 9.0};
+    Studentas s("Petras", "Petraitis", nd, 8.0);
+
+    s.Ivertinimas_med();
+
+    double expectedGalutinis = 0.4 * 8.0 + 0.6 * 8.0;
+    EXPECT_EQ(s.getGalutinis(), expectedGalutinis);
+}
+
 
 
